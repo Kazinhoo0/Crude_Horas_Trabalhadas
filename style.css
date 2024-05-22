@@ -1,10 +1,162 @@
 .container {
-    width: 100%;
-    height: 100%;
-    /* Add your background pattern here */
-    background: rgba(29, 31, 32, 0.904)
-      radial-gradient(rgba(255, 255, 255, 0.712) 10%, transparent 1%);
+  border: 1px rgb(0, 0, 0) solid;
+  width: 100%;
+  height: 940px
+}
+
+.container2 {
+  width: 100%;
+  height: 940px;
+  /* Add your background pattern here */
+  background-color: #313131;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+  width: 200px;
+  height: 940px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-left: 10px;
+}
+
+.form:hover {
+  transform: scale(1.05);
+  border: 1px solid black;
+}
+
+#heading {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
+  width: 200px;
+  margin-bottom: 30px;
+
   
-    background-size: 11px 11px;
-  }
+}
+
+.p_cabecalho {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 1.0em;
+  width: 200px;
+  margin-top: 100px;
+
+
+
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+
+.form .btn {
+  display:grid;
+  justify-content: center;
+  flex-direction: flex;
+  margin-top: 2.5em;
+  padding-top: 5px;
+  border: 1px solid rgb(240, 240, 240);
+  padding-bottom: 180px;
   
+  
+}
+
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+  text-align: center;
+  height: 50px;
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+.button1:hover {
+  background-color: black;
+  color: white;
+  
+  
+}
+
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+
+.button3 {
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button3:hover {
+  background-color: red;
+  color: white;
+}
+
+.input_box {
+  width: 100%;
+  height: 940px;
+  border: 1px solid red;
+  
+}
