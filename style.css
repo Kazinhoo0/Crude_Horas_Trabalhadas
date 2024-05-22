@@ -11,10 +11,19 @@
   background-color: #313131;
   background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
   background-size: 30px 30px;
-  background-position: -5px -5px
+  background-position: -5px -5px;
+  display: flex;
 }
 
+.new_div {
+  border: 1px solid rgb(6, 250, 67);
+  height: 940px;
+  width: 80%;
+}
 
+.div_{
+
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -26,10 +35,12 @@
   border-radius: 25px;
   transition: .4s ease-in-out;
   width: 200px;
-  height: 940px;
-  border: 1px solid rgb(0, 0, 0);
+  height: 920px;
+  border: 1px solid rgb(245, 1, 192);
   margin-left: 10px;
 }
+
+
 
 .form:hover {
   transform: scale(1.05);
@@ -91,8 +102,8 @@
   flex-direction: flex;
   margin-top: 2.5em;
   padding-top: 5px;
-  border: 1px solid rgb(240, 240, 240);
   padding-bottom: 180px;
+  height: 360px;
   
   
 }
@@ -155,8 +166,8 @@
 }
 
 .input_box {
-  width: 100%;
+  width: 20%;
   height: 940px;
-  border: 1px solid red;
+  border: 1px solid rgb(226, 222, 222);
   
 }
