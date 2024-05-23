@@ -177,7 +177,7 @@
 
 /*                                                                                                                                                                */
 .button {
-  appaerance: none;
+  appearance: none;
   font: inherit;
   border: none;
   background: none;
@@ -189,7 +189,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .modal {
@@ -197,10 +196,10 @@
   flex-direction: column;
   width: 100%;
   max-width: 500px;
-  background-color: #cfcccc;
+  background-color: #252525;
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
   margin-bottom: 250px;
 }
 .modal2 {
@@ -210,10 +209,10 @@
   max-width: 500px;
   height: 630px;
   max-height: 630px;
-  background-color: #cfcccc;
+  background-color: #252525;
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
   margin-bottom: 290px;
 
 }
@@ -238,6 +237,7 @@
 .modal__title {
   font-weight: 700;
   font-size: 1.25rem;
+  color: white;
 }
 
 .button {
@@ -284,6 +284,7 @@
 .input__label {
   font-weight: 700;
   font-size: 0.875rem;
+  color: white;
 }
 
 .input__field {
@@ -293,6 +294,7 @@
   border-radius: 0.25rem;
   padding: 0.75rem 0.75rem;
   transition: 0.15s ease;
+  text-align: center;
 }
 
 .input__field:focus {
