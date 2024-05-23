@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PADPROJECTS</title>
+    <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,7 +22,7 @@
                             <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p>
 
                         <div class="btn">
-                            <a  class="button1"  href="Cadastrar_proj.html">Novo Projeto</a>
+                            <a  class="button1"  href="index.html">Novo Projeto</a>
                             <a  class="button1"  href="viewproj.html">Ver projetos</a>
                             <a  class="button1" href="tothorasproj.html">Total de Horas</a>
                             <a class="button1" href="modifyvalorhora.html"">Modificar Valor/Hora</a>
@@ -38,8 +38,32 @@
                 
             
             <div class="new_div">
-                <div>
-                    
+                <div class="div_input">
+                    <div class="container">
+	
+                        <div class="modal">
+                            <div class="modal__header">
+                                <span class="modal__title">Criar novo projeto</span><button class="button button--icon"><svg width="24" viewBox="0 0 24 24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg></button>
+                            </div>
+                            <div class="modal__body">
+                                <div class="input">
+                                    <label class="input__label">Nome projeto</label>
+                                    <input class="input__field" type="text"> 
+                                    <p class="input__description">O título não pode ter mais que 32 caracteres</p>
+                                </div>
+                                <div class="input">
+                                                    <label class="input__label">Descrição</label>
+                                    <textarea class="input__field input__field--textarea"></textarea>
+                                        <p class="input__description">Faça uma boa descrição do seu projeto, para que todos possam saber para que ele serve.</p>
+                                </div>
+                            </div>
+                            <div class="modal__footer">
+                                <button class="button button--primary">Criar projeto</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
