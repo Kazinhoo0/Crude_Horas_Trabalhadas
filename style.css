@@ -203,6 +203,20 @@
   border: 1px solid rgb(255, 255, 255);
   margin-bottom: 250px;
 }
+.modal2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  height: 630px;
+  max-height: 630px;
+  background-color: #cfcccc;
+  box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  margin-bottom: 290px;
+
+}
 
 .modal__header {
   padding: 1rem 1.5rem;
@@ -214,6 +228,7 @@
 
 .modal__body {
   padding: 1rem 1rem;
+  margin-bottom: 30px ;
 }
 
 .modal__footer {
@@ -250,6 +265,7 @@
   border-radius: 0.25rem;
   font-weight: 500;
   font-size: 0.875rem;
+  
 }
 
 .button--primary:hover {
@@ -283,6 +299,7 @@
   outline: none;
   border-color: #007dab;
   box-shadow: 0 0 0 1px #007dab, 0 0 0 4px rgba(0, 125, 171, 0.25);
+  
 }
 
 .input__field--textarea {
