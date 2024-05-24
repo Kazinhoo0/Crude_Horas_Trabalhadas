@@ -15,19 +15,20 @@
 }
 
 .new_div {
-  
+
   height: 940px;
   width: 80%;
 }
 
-.div_input{
+.div_input {
   width: 700px;
   height: 650px;
   margin: auto;
   margin-top: 100px;
   background-color: #171717;
-  
-} 
+
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -53,11 +54,11 @@
 #heading {
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 1.5em;
+  font-size: 1.9em;
   width: 200px;
-  margin-bottom: 30px;
+  margin-top: 60px;
+  text-decoration: none;
 
-  
 }
 
 .p_cabecalho {
@@ -100,15 +101,15 @@
 }
 
 .form .btn {
-  display:grid;
+  display: grid;
   justify-content: center;
   flex-direction: flex;
   margin-top: 2.5em;
   padding-top: 5px;
   padding-bottom: 180px;
   height: 360px;
-  
-  
+
+
 }
 
 .button1 {
@@ -131,8 +132,8 @@
 .button1:hover {
   background-color: black;
   color: white;
-  
-  
+
+
 }
 
 .button2 {
@@ -172,7 +173,7 @@
   width: 20%;
   height: 940px;
 
-  
+
 }
 
 /*                                                                                                                                                                */
@@ -202,6 +203,7 @@
   border: 1px solid rgb(0, 0, 0);
   margin-bottom: 250px;
 }
+
 .modal2 {
   display: flex;
   flex-direction: column;
@@ -217,6 +219,18 @@
 
 }
 
+.modal3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  background-color: #252525;
+  box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-bottom: 285px;
+}
+
 .modal__header {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #ddd;
@@ -227,7 +241,7 @@
 
 .modal__body {
   padding: 1rem 1rem;
-  margin-bottom: 30px ;
+  margin-bottom: 30px;
 }
 
 .modal__footer {
@@ -254,7 +268,8 @@
   border-radius: 0.25rem;
 }
 
-.button--icon:focus, .button--icon:hover {
+.button--icon:focus,
+.button--icon:hover {
   background-color: #ededed;
 }
 
@@ -265,7 +280,7 @@
   border-radius: 0.25rem;
   font-weight: 500;
   font-size: 0.875rem;
-  
+
 }
 
 .button--primary:hover {
@@ -277,7 +292,7 @@
   flex-direction: column;
 }
 
-.input + .input {
+.input+.input {
   margin-top: 1.75rem;
 }
 
@@ -294,18 +309,28 @@
   border-radius: 0.25rem;
   padding: 0.75rem 0.75rem;
   transition: 0.15s ease;
-  text-align: center;
+  
+}
+
+.input__field2 {
+  display: block;
+  margin-top: 0.5rem;
+  border: 1px solid #DDD;
+  border-radius: 0.25rem;
+  padding: 0.75rem 0.75rem;
+  transition: 0.15s ease;
+  width: 100px;
 }
 
 .input__field:focus {
   outline: none;
   border-color: #007dab;
   box-shadow: 0 0 0 1px #007dab, 0 0 0 4px rgba(0, 125, 171, 0.25);
-  
+
 }
 
 .input__field--textarea {
-  min-height: 100px;
+  min-height: 50px;
   max-width: 100%;
 }
 
