@@ -15,19 +15,20 @@
 }
 
 .new_div {
-  
+
   height: 940px;
   width: 80%;
 }
 
-.div_input{
+.div_input {
   width: 700px;
   height: 650px;
   margin: auto;
   margin-top: 100px;
   background-color: #171717;
-  
-} 
+
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -53,11 +54,11 @@
 #heading {
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 1.5em;
+  font-size: 1.9em;
   width: 200px;
-  margin-bottom: 30px;
+  margin-top: 60px;
+  text-decoration: none;
 
-  
 }
 
 .p_cabecalho {
@@ -100,15 +101,15 @@
 }
 
 .form .btn {
-  display:grid;
+  display: grid;
   justify-content: center;
   flex-direction: flex;
   margin-top: 2.5em;
   padding-top: 5px;
   padding-bottom: 180px;
   height: 360px;
-  
-  
+
+
 }
 
 .button1 {
@@ -131,8 +132,8 @@
 .button1:hover {
   background-color: black;
   color: white;
-  
-  
+
+
 }
 
 .button2 {
@@ -171,8 +172,9 @@
 .input_box {
   width: 20%;
   height: 940px;
+  margin-bottom: 50px;
 
-  
+
 }
 
 /*                                                                                                                                                                */
@@ -202,6 +204,7 @@
   border: 1px solid rgb(0, 0, 0);
   margin-bottom: 250px;
 }
+
 .modal2 {
   display: flex;
   flex-direction: column;
@@ -217,6 +220,18 @@
 
 }
 
+.modal3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  background-color: #252525;
+  box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-bottom: 285px;
+}
+
 .modal__header {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #ddd;
@@ -227,7 +242,7 @@
 
 .modal__body {
   padding: 1rem 1rem;
-  margin-bottom: 30px ;
+  margin-bottom: 30px;
 }
 
 .modal__footer {
@@ -254,7 +269,8 @@
   border-radius: 0.25rem;
 }
 
-.button--icon:focus, .button--icon:hover {
+.button--icon:focus,
+.button--icon:hover {
   background-color: #ededed;
 }
 
@@ -265,7 +281,8 @@
   border-radius: 0.25rem;
   font-weight: 500;
   font-size: 0.875rem;
-  
+
+
 }
 
 .button--primary:hover {
@@ -277,7 +294,11 @@
   flex-direction: column;
 }
 
-.input + .input {
+.input2 {
+  display: flex;
+}
+
+.input+.input {
   margin-top: 1.75rem;
 }
 
@@ -285,6 +306,8 @@
   font-weight: 700;
   font-size: 0.875rem;
   color: white;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .input__field {
@@ -294,23 +317,102 @@
   border-radius: 0.25rem;
   padding: 0.75rem 0.75rem;
   transition: 0.15s ease;
-  text-align: center;
+
+}
+
+.input__field2 {
+  display: block;
+  margin-top: 0.5rem;
+  border: 1px solid #DDD;
+  border-radius: 0.25rem;
+  padding: 0.75rem 0.75rem;
+  transition: 0.15s ease;
+  width: 100px;
+  margin-left: 30px;
 }
 
 .input__field:focus {
   outline: none;
   border-color: #007dab;
   box-shadow: 0 0 0 1px #007dab, 0 0 0 4px rgba(0, 125, 171, 0.25);
-  
+
 }
 
 .input__field--textarea {
-  min-height: 100px;
+  min-height: 50px;
   max-width: 100%;
+  margin-top: 50px;
 }
 
 .input__description {
   font-size: 0.875rem;
   margin-top: 0.5rem;
   color: #8d8d8d;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------             */
+
+.toggle-switch {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  left: 1690px;
+  bottom: 220px;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+  /* margin-left: 1700px; */
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked~.slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked~.slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
