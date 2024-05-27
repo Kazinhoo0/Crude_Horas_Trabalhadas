@@ -145,7 +145,7 @@
   outline: none;
   transition: .4s ease-in-out;
   background-color: #252525;
-  color: white;
+  color: #ffffff;
 }
 
 .button2:hover {
@@ -247,6 +247,8 @@
 
 .modal__footer {
   padding: 0 1.5rem 1.5rem;
+  margin-left: 270px;
+  margin-top: 10px;
 }
 
 .modal__title {
@@ -308,6 +310,15 @@
   color: white;
   margin-top: 20px;
   margin-left: 20px;
+  border: 1px solid red;
+}
+.input__label2 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 1px solid red;
 }
 
 .input__field {
@@ -348,6 +359,8 @@
   font-size: 0.875rem;
   margin-top: 0.5rem;
   color: #8d8d8d;
+  border: 1px solid red;
+  width: 200px;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------             */
