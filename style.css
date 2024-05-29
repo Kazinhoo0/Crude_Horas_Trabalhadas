@@ -310,15 +310,16 @@
   color: white;
   margin-top: 20px;
   margin-left: 20px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
+
 .input__label2 {
   font-weight: 700;
   font-size: 0.875rem;
   color: white;
   margin-top: 20px;
   margin-left: 20px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .input__field {
@@ -359,7 +360,7 @@
   font-size: 0.875rem;
   margin-top: 0.5rem;
   color: #8d8d8d;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 200px;
 }
 
@@ -428,4 +429,20 @@
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+
+/*  IMG ENGLISH  */
+
+.img_english {
+  margin-left: 1600px;
+  position: absolute;
+  top: 30px;
+}
+
+.img_link {
+  margin-left: 1600px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
 }
