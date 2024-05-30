@@ -452,3 +452,34 @@
 .toggle input:checked ~ .label {
   color: rgba(0, 0, 0, 0.8);
 }
+
+/*       */
+
+.input__label2 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+/*  IMG ENGLISH  */
+
+.img_english {
+  margin-left: 1600px;
+  position: absolute;
+  top: 30px;
+}
+
+.img_link {
+  margin-left: 1600px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
