@@ -434,7 +434,6 @@
   top: 0;
 }
 
-<<<<<<< HEAD
 .toggle input:active ~ .button {
   filter: blur(0.5px);
   box-shadow: 0 12px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
@@ -452,29 +451,4 @@
 
 .toggle input:checked ~ .label {
   color: rgba(0, 0, 0, 0.8);
-=======
-.checkbox:checked~.slider::before {
-  -webkit-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  transform: translateX(50px);
-  background-color: var(--dark);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-
-/*  IMG ENGLISH  */
-
-.img_english {
-  margin-left: 1600px;
-  position: absolute;
-  top: 30px;
-}
-
-.img_link {
-  margin-left: 1600px;
-  position: absolute;
-  top: 15px;
-  left: 10px;
->>>>>>> 9b4fd3f1c44aedd11b4333d3dd16a7ff8b53384a
 }
