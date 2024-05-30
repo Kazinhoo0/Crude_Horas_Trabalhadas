@@ -89,7 +89,7 @@
 .input-icon {
   height: 1.3em;
   width: 1.3em;
-  fill: white;
+  fill: #ffffff;
 }
 
 .input-field {
@@ -186,15 +186,16 @@
   cursor: pointer;
 }
 
-.container {
+.container3 {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .modal {
-  display: flex;
+  position: absolute;
   flex-direction: column;
   width: 100%;
   max-width: 500px;
@@ -202,7 +203,8 @@
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
   border: 1px solid rgb(0, 0, 0);
-  margin-bottom: 250px;
+  border: 1px solid rgb(255, 3, 3);
+  margin-left: 100px;
 }
 
 .modal2 {
@@ -221,15 +223,18 @@
 }
 
 .modal3 {
-  display: flex;
+  position:absolute;
   flex-direction: column;
   width: 100%;
   max-width: 500px;
   background-color: #252525;
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
-  border: 1px solid rgb(0, 0, 0);
-  margin-bottom: 285px;
+  border: 1px solid rgb(238, 12, 12);
+  margin-bottom: 350px;
+  height: 600px;
+  margin-top: 25px;
+  margin-left: 100px;
 }
 
 .modal__header {
@@ -283,6 +288,8 @@
   border-radius: 0.25rem;
   font-weight: 500;
   font-size: 0.875rem;
+  border: 1px red solid;
+  margin-bottom: 200px;
 
 
 }
@@ -308,8 +315,10 @@
   font-weight: 700;
   font-size: 0.875rem;
   color: white;
-  margin-top: 20px;
+  margin-bottom: 100px;
   margin-left: 20px;
+  margin-bottom: 50px;
+  font-size: larger;
   /* border: 1px solid red; */
 }
 
@@ -339,7 +348,8 @@
   border-radius: 0.25rem;
   padding: 0.75rem 0.75rem;
   transition: 0.15s ease;
-  width: 100px;
+  width: 70px;
+  height: 10px;
   margin-left: 30px;
 }
 
@@ -360,11 +370,20 @@
   font-size: 0.875rem;
   margin-top: 0.5rem;
   color: #8d8d8d;
-  /* border: 1px solid red; */
-  width: 200px;
+  margin-top: 40px;
+  width: 450px;
 }
 
-/* ---------------------------------------------------------------------------------------------------------------             */
+
+.style_text {
+  color: #6c00ab;
+  background-color: #000000;
+  padding: 15px;
+
+
+}
+
+/* ----------------------------------------------------------------           */
 
 .toggle {
   display: inline-block;
@@ -464,15 +483,19 @@
 }
 
 
-
-
+.input__field {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    color: #8d8d8d;
+    width: 200px;
+}
 
 
 
 /*  IMG ENGLISH  */
 
 .img_english {
-  margin-left: 1600px;
+  margin-left: 1110px;
   position: absolute;
   top: 30px;
 }
@@ -482,4 +505,88 @@
   position: absolute;
   top: 15px;
   left: 10px;
+}
+
+/* IMG BRAZIL */
+
+.img_brazil {
+  margin-left: 1040px;
+  position: absolute;
+  top: 39px;
+}
+
+.img_link {
+  margin-left: 1600px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+
+
+/*   BOTÃO DE TROCAR COR DE FUNDO DE TELA  */
+.toggle-switch {
+  position: relative;
+  left: 1200px;
+  top: 20px;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+  border: 1px solid red;
+
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

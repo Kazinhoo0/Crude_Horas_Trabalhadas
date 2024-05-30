@@ -1,15 +1,18 @@
 // função para mudar a cor de fundo do site
-function mudarcor() {
+function mudarcor(cordefundo) {
 
-   var checkbox = document.getElementById('wallpaperbox');
+   let boxcheck = document.getElementById('wallpaperbox');
+   
+   if (boxcheck.checked) {
 
-   if (checkbox.checked = true) {
-      document.getElementById('wallpaperbox').style.backgroundColor = '#ffffff'
+      document.getElementById('wallpaperbox').style.backgroundColor = cordefundo
    } else {
-      document.getElementById('wallpaperbox').style.backgroundColor = '#252525'
+      document.getElementById('wallpaperbox').style.backgroundColor = '#313131'
+   }
+   
+  
    }
 
-}
 
 
 function capturarvalores () {
