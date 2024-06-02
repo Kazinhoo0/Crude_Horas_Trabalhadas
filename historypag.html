@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadProjects - Sobre nós </title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -13,9 +14,9 @@
 
 
     <div class="container">
-        <div class="container2">
+        <div id="wallpaperbox" class="container2">
             <div class="input_box">
-                <form class="form">
+                <form id="wallpaperpadproj" class="form">
                     <a id ="heading" href="index.html">PADPROJECTS</a>
                     <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p> 
                     
@@ -48,14 +49,14 @@
 
             <div class="toggle-switch">
                 <label class="switch-label">
-                  <input type="checkbox" class="checkbox">
-                  <span class="slider"></span>
+                    <input id= "checkbox" onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')" type="checkbox" class="checkbox">                  
+                    <span class="slider"></span>
                 </label>
             </div>
         
            
             <div class="new_div">
-                <div class="div_input">
+                <div id="inputwhite" class="div_input">
                     <div class="container">
     
                         <div class="modal">

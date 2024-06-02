@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -15,9 +16,9 @@
 
     <div class="container">
     
-        <div class="container2">
+        <div id="wallpaperbox" class="container2">
             <div class="input_box">      
-                <form class="form">
+                <form id="wallpaperpadproj" class="form">
                         <a id ="heading" href="index.html">PADPROJECTS</a>
                         <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p>
                         <div class="btn">
@@ -49,16 +50,15 @@
             
             <div class="toggle-switch">
                 <label class="switch-label">
-                    <input type="checkbox" class="checkbox">
-                    <span class="slider"></span>
+                    <input id= "checkbox" onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')" type="checkbox" class="checkbox">                    <span class="slider"></span>
                 </label>
             </div>
 
             <div class="new_div">
-                <div class="div_input">
+                <div id="inputwhite" class="div_input">
                     <div class="container">
 
-                        <div class="modal3">
+                        <div id="loginwhite" class="modal3">
                             <div class="modal__header">
                                 <span class="modal__title">Criar novo projeto</span><button
                                     class="button button--icon"><svg width="24" viewBox="0 0 24 24" height="24"
@@ -88,9 +88,9 @@
                                     <p class="input__description">Faça uma boa descrição do seu projeto, para que todos
                                         possam saber para que ele serve.</p>
                                 </div>
-                            </div>
-                            <div class="modal__footer">
-                                <button onclick="novo_proj()" class="button button--primary">Criar projeto</button>
+                                <div class="modal__footer">
+                                    <button onclick="novo_proj()" class="button button--primary">Criar projeto</button>
+                                </div>
                             </div>
                         </div>
                     </div>

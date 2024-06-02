@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadProjects - TotalHorasProj</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -14,10 +15,10 @@
 
 
     <div class="container">
-        <div class="container2">
+        <div id="wallpaperbox" class="container2">
             <div class="input_box">
                 
-                <form class="form">
+                <form id="wallpaperpadproj" class="form">
                     <a id ="heading" href="index.html">PADPROJECTS</a>
                     <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p> 
                     <div class="btn">
@@ -51,34 +52,37 @@
     
             <div class="toggle-switch">
                 <label class="switch-label">
-                  <input type="checkbox" class="checkbox">
-                  <span class="slider"></span>
+                    <input id= "checkbox" onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')" type="checkbox" class="checkbox">                  <span class="slider"></span>
                 </label>
             </div>
         
 
             
             <div class="new_div">
-                <div class="div_input">
+                <div id="inputwhite" class="div_input">
                     <div class="container">
-    
-                        <div class="modal">
+                        <div id="loginwhite" class="modal">
                             <div class="modal__header">
+
                                 <!-- 0<span class="modal__title">Projetos Cadastrados</span><button class="button button--icon"><svg width="24" viewBox="0 0 24 24" height="24" xmlns="http://www.w3.org/2000/svg"> -->
                             </div>
+
                             <div class="modal__body">
+
                                 <div class="input">
+
                                     <label class="input__label">Nome projeto</label>
                                     <input class="input__field" type="text"> 
                                     <p class="input__description">O título não pode ter mais que 32 caracteres</p>
+                                
                                 </div>
+
                                 <div class="input">
-                                                    <label class="input__label">Descrição</label>
+                                    <label class="input__label">Descrição</label>
                                     <textarea class="input__field input__field--textarea"></textarea>
-                                        <p class="input__description">Faça uma boa descrição do seu projeto, para que todos possam saber para que ele serve.</p>
-                                </div>
+                                    <p class="input__description">Faça uma boa descrição do seu projeto, para que todos possam saber para que ele serve.</p>
+                                </div>  
                             </div>
-                           
                         </div>
                     </div>
                 </div>

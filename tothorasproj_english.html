@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadProjects - TotalHorasProj</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -14,18 +15,18 @@
 
 
     <div class="container">
-        <div class="container2">
+        <div id="wallpaperbox" class="container2">
             <div class="input_box">
-                <form class="form">
+                <form id="wallpaperpadproj" class="form">
                     <a id="heading" href="index_english.html">PADPROJECTS</a>
                     <p class="p_cabecalho">WHAT YOU WANT TO DO NOW ?</p>
-                    <div class="btn">
-                        <a class="button1" href="novoprojeto_english.html">New Project</a>
-                        <a class="button1" href="viewproj_english.html">View Projects</a>
-                        <a class="button1" href="tothorasproj_english.html">View Total Hours</a>
-                        <a class="button1" href="modifyvalorhora_english.html"">Modify Value/hour</a>
-
-                        </div>
+                    <div  class="btn">
+                        <a class="button1 buttonwhite" href="novoprojeto_english.html">New Project</a>
+                        <a class="button1 buttonwhite" href="viewproj_english.html">View Project</a>
+                        <a class="button1 buttonwhite" href="tothorasproj_english.html">View Total Hours</a>
+                        <a class="button1 buttonwhite" href="modifyvalorhora_english.html">Modify Value/Hours</a>
+                   
+                    </div>
                         <div>
                             <a style=" color: blueviolet; text-decoration: none;" href="historypag_english.html">About Us</a>
                     </div>
@@ -48,17 +49,15 @@
     
             <div class="toggle-switch">
                 <label class="switch-label">
-                  <input type="checkbox" class="checkbox">
-                  <span class="slider"></span>
-                </label>
+                    <input id= "checkbox" onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')" type="checkbox" class="checkbox">                </label>
             </div>
 
             
             <div class="new_div">
-                <div class="div_input">
+                <div id="inputwhite" class="div_input">
                     <div class="container">
     
-                        <div class="modal">
+                        <div id="loginwhite" class="modal">
                             <div class="modal__header">
                                 <!-- 0<span class="modal__title">Projetos Cadastrados</span><button class="button button--icon"><svg width="24" viewBox="0 0 24 24" height="24" xmlns="http://www.w3.org/2000/svg"> -->
                             </div>

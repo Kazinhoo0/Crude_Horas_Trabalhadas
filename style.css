@@ -1,14 +1,14 @@
 .container {
   width: 100%;
-  height: 940px;
+  height: 100%;
 }
 
 .container2 {
   width: 100%;
-  height: 940px;
+  height: 100%;
   /* Add your background pattern here */
   background-color: #313131;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-image: radial-gradient(#f7f7f744 2px, transparent 0);
   background-size: 30px 30px;
   background-position: -5px -5px;
   display: flex;
@@ -25,7 +25,7 @@
   height: 650px;
   margin: auto;
   margin-top: 100px;
-  background-color: #171717;
+  background-color: #161616;
 
 }
 
@@ -121,8 +121,8 @@
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+  background-color: #272525;
+  color: #fff3f3;
   text-align: center;
   height: 50px;
   margin-top: 40px;
@@ -130,7 +130,7 @@
 }
 
 .button1:hover {
-  background-color: black;
+  background-color: #585555;
   color: white;
 
 
@@ -144,8 +144,21 @@
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
+  background-color: #070707;
   color: #ffffff;
+}
+
+.button_createaccount {
+  margin-left:160px; 
+  color:white; 
+  text-decoration:none; 
+  margin-top:20px; 
+  background-color:purple; 
+  border-radius: 5px;
+  width: 150px;
+  height: 20px;
+  text-align: center;
+  
 }
 
 .button2:hover {
@@ -197,14 +210,14 @@
 .modal {
   position: absolute;
   flex-direction: column;
+  height: 620px;
   width: 100%;
   max-width: 500px;
   background-color: #252525;
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
-  border: 1px solid rgb(0, 0, 0);
-  border: 1px solid rgb(255, 3, 3);
   margin-left: 100px;
+  margin-top:15px;
 }
 
 .modal2 {
@@ -218,7 +231,7 @@
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
   border: 1px solid rgb(0, 0, 0);
-  margin-bottom: 290px;
+  margin-left: 100px;
 
 }
 
@@ -230,7 +243,7 @@
   background-color: #252525;
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
-  border: 1px solid rgb(238, 12, 12);
+
   margin-bottom: 350px;
   height: 600px;
   margin-top: 25px;
@@ -252,8 +265,14 @@
 
 .modal__footer {
   padding: 0 1.5rem 1.5rem;
-  margin-left: 270px;
-  margin-top: 10px;
+  margin-left: 300px;
+  margin-bottom: 150px;
+}
+
+.modal__footer2 {
+  padding: 0 1.5rem 1.5rem;
+  margin-left: 300px;
+  margin-top: 100px;
 }
 
 .modal__title {
@@ -288,9 +307,20 @@
   border-radius: 0.25rem;
   font-weight: 500;
   font-size: 0.875rem;
-  border: 1px red solid;
   margin-bottom: 200px;
+}
 
+.style_backmenu {
+  margin-left: 300px;
+  background-color: #6d00ac;
+  border-radius: 0.25rem;
+  color: white;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+  
+  
 
 }
 
@@ -370,7 +400,7 @@
   font-size: 0.875rem;
   margin-top: 0.5rem;
   color: #8d8d8d;
-  margin-top: 40px;
+  margin-bottom: 40px;
   width: 450px;
 }
 
@@ -535,7 +565,6 @@
   --dark: #28292c;
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
-  border: 1px solid red;
 
 }
 

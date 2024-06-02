@@ -1,17 +1,42 @@
 // função para mudar a cor de fundo do site
-function mudarcor(cordefundo) {
+function mudarcor(cordefundo,backimage,divproj,buttonback,buttoncolor,inputwhitecolor,whitelogin) {
 
-   let boxcheck = document.getElementById('wallpaperbox');
-   
-   if (boxcheck.checked) {
+   let checkbox = document.getElementById("checkbox");
+   let div = document.getElementById("wallpaperbox");
+   let divpadproj = document.getElementById("wallpaperpadproj");
+   let buttonwhite = document.getElementsByClassName("buttonwhite");
+   let inputwhite = document.getElementById("inputwhite")
+   let loginwhite = document.getElementById('loginwhite')
 
-      document.getElementById('wallpaperbox').style.backgroundColor = cordefundo
-   } else {
-      document.getElementById('wallpaperbox').style.backgroundColor = '#313131'
-   }
-   
-  
-   }
+
+     
+     if (checkbox.checked) {
+         div.style.backgroundColor = cordefundo;
+         div.style.backgroundImage = backimage;
+         divpadproj.style.backgroundColor = divproj;
+         inputwhite.style.backgroundColor= inputwhitecolor
+         loginwhite.style.backgroundColor = whitelogin
+
+            if ( buttonwhite.length > 0) {
+               for (i = 0; i < buttonwhite.length; i++) {
+                  buttonwhite[i].style.backgroundColor = buttonback;
+                  buttonwhite[i].style.color = buttoncolor;
+               }
+            }
+     } else { 
+         div.style.backgroundColor = '#313131';
+         div.style.backgroundImage = 'radial-gradient(#f7f7f744 2px, transparent 0)'
+         divpadproj.style.backgroundColor = '#171717'
+         inputwhite.style.backgroundColor = '#161616'
+         for (i = 0; i < buttonwhite.length; i++) {
+            buttonwhite[i].style.backgroundColor = '#272525';
+            buttonwhite[i].style.color = '#fff3f3';
+         }
+         
+     }
+     
+ 
+     }
 
 
 
