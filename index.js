@@ -1,5 +1,5 @@
 // função para mudar a cor de fundo do site
-function mudarcor(cordefundo,backimage,divproj,buttonback,buttoncolor,inputwhitecolor,whitelogin) {
+function mudarcor(cordefundo, backimage, divproj, buttonback, buttoncolor, inputwhitecolor, whitelogin) {
 
    let checkbox = document.getElementById("checkbox");
    let div = document.getElementById("wallpaperbox");
@@ -9,38 +9,83 @@ function mudarcor(cordefundo,backimage,divproj,buttonback,buttoncolor,inputwhite
    let loginwhite = document.getElementById('loginwhite')
 
 
-     
-     if (checkbox.checked) {
-         div.style.backgroundColor = cordefundo;
-         div.style.backgroundImage = backimage;
-         divpadproj.style.backgroundColor = divproj;
-         inputwhite.style.backgroundColor= inputwhitecolor
-         loginwhite.style.backgroundColor = whitelogin
 
-            if ( buttonwhite.length > 0) {
-               for (i = 0; i < buttonwhite.length; i++) {
-                  buttonwhite[i].style.backgroundColor = buttonback;
-                  buttonwhite[i].style.color = buttoncolor;
-               }
-            }
-     } else { 
-         div.style.backgroundColor = '#313131';
-         div.style.backgroundImage = 'radial-gradient(#f7f7f744 2px, transparent 0)'
-         divpadproj.style.backgroundColor = '#171717'
-         inputwhite.style.backgroundColor = '#161616'
+   if (checkbox.checked) {
+      div.style.backgroundColor = cordefundo;
+      div.style.backgroundImage = backimage;
+      divpadproj.style.backgroundColor = divproj;
+      inputwhite.style.backgroundColor = inputwhitecolor
+      loginwhite.style.backgroundColor = whitelogin
+
+      if (buttonwhite.length > 0) {
          for (i = 0; i < buttonwhite.length; i++) {
-            buttonwhite[i].style.backgroundColor = '#272525';
-            buttonwhite[i].style.color = '#fff3f3';
+            buttonwhite[i].style.backgroundColor = buttonback;
+            buttonwhite[i].style.color = buttoncolor;
          }
-         
-     }
-     
+      }
+   } else {
+      div.style.backgroundColor = '#313131';
+      div.style.backgroundImage = 'radial-gradient(#f7f7f744 2px, transparent 0)'
+      divpadproj.style.backgroundColor = '#171717'
+      inputwhite.style.backgroundColor = '#161616'
+      for (i = 0; i < buttonwhite.length; i++) {
+         buttonwhite[i].style.backgroundColor = '#272525';
+         buttonwhite[i].style.color = '#fff3f3';
+      }
+
+   }
+
+
+}
+
+
+
+function mouseenter(backcolor, buttoncolor) {
+   let botãocriarconta = document.getElementById('buttoncriarconta');
+
+
  
-     }
+      botãocriarconta.style.backgroundColor = backcolor;
+      botãocriarconta.style.color = buttoncolor;
+
+      botãojatenhoconta.style.backgroundColor = backcolor;
+      botãojatenhoconta.style.color = buttoncolor;
+}
+
+function mouseenter2 (backcolor,buttoncolor) {
+   let botãojatenhoconta = document.getElementById('buttonjatenhoconta');
+
+
+   botãojatenhoconta.style.backgroundColor = backcolor;
+   botãojatenhoconta.style.color = buttoncolor;
+}
 
 
 
-function capturarvalores () {
+
+function mouseleave(backcolor, buttoncolor) {
+   let botãocriarconta = document.getElementById('buttoncriarconta');
+   let botãojatenhoconta = document.getElementById("buttonjatenhoconta");
+
+
+      botãocriarconta.style.backgroundColor = backcolor;
+      botãocriarconta.style.color = buttoncolor;
+      botãojatenhoconta.style.background = backcolor;
+      botãojatenhoconta.style.color = buttoncolor;
+
+}
+
+function mouseleave2(backcolor, buttoncolor) {
+   let botãojatenhoconta = document.getElementById("buttonjatenhoconta");
+      
+      botãojatenhoconta.style.background = backcolor;
+      botãojatenhoconta.style.color = buttoncolor;
+
+}
+
+
+
+function capturarvalores() {
    const nomeproj = document.getElementById('nome').value;
    const valorhoraproj = parseFloat(document.getElementById('valorhora').value);
    const descricaoproj = document.getElementById('descricao').value;

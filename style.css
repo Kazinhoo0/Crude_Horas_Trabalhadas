@@ -3,6 +3,11 @@
   height: 100%;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container2 {
   width: 100%;
   height: 100%;
@@ -153,7 +158,7 @@
   color:white; 
   text-decoration:none; 
   margin-top:20px; 
-  background-color:purple; 
+  background-color:#8a2be2; 
   border-radius: 5px;
   width: 150px;
   height: 20px;
@@ -457,6 +462,7 @@
   left: 50%;
   top: 50%;
 }
+
 
 .toggle .label {
   transition: color 300ms ease-out;
