@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="index.js"></script>
+    <script type="module" src="app.js"></script>
     
 </head>
 
@@ -70,15 +71,15 @@
                             </div>
                             <div class="modal__body">
                                 <div class="input">
-                                    <p style="color: white;">Usuário: </p>
-                                    <input type="text" placeholder="">
-                                    <br><br>
-                                    <p style="color: white;">Senha: </p>
-                                    <input type="password" placeholder="">
-                                    <br>
-                                    <br>
-                                    <button style="margin-bottom:10px; background-color:purple; color:white; border-radius: 5px; border:1px; padding:5px;" type="button">Criar Conta</button>
-                                    <a class="button_createaccount " href="index.html">Já tenho uma conta</a>
+                                        <p style="color: white;">Usuário: </p>
+                                        <input id="inputusername" type="text" placeholder="">
+                                        <br><br>
+                                        <p style="color: white;">Senha: </p>
+                                        <input id="inputpassword" type="password" placeholder="">
+                                        <br>
+                                        <br>
+                                        <button style="background-color: blueviolet; color:white; border-radius:5px; border:1px solid black;" onclick="Criareregistrarusuarios()" type="button" >Criar Conta</button>
+                                        <a class="button_createaccount " href="index.html">Já tenho uma conta</a>
                                 </div>
                                 <div class="input">
                                     <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">MUITO BEM-VINDO AO PADPROJECTS </p>

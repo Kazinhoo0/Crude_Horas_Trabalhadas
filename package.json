@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^4.19.2",
     "mysql2": "^3.9.7",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
@@ -15,5 +16,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-  
 }

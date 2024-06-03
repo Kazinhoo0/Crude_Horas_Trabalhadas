@@ -1,61 +1,64 @@
-// função para mudar a cor de fundo do site
-function mudarcor(cordefundo,backimage,divproj,buttonback,buttoncolor,inputwhitecolor,whitelogin) {
-
-   let checkbox = document.getElementById("checkbox");
-   let div = document.getElementById("wallpaperbox");
-   let divpadproj = document.getElementById("wallpaperpadproj");
-   let buttonwhite = document.getElementsByClassName("buttonwhite");
-   let inputwhite = document.getElementById("inputwhite")
-   let loginwhite = document.getElementById('loginwhite')
+ import sqlite3 from 'sqlite3';
+ import {open} from 'sqlite';
 
 
-     
-     if (checkbox.checked) {
-         div.style.backgroundColor = cordefundo;
-         div.style.backgroundImage = backimage;
-         divpadproj.style.backgroundColor = divproj;
-         inputwhite.style.backgroundColor= inputwhitecolor
-         loginwhite.style.backgroundColor = whitelogin
 
-            if ( buttonwhite.length > 0) {
-               for (i = 0; i < buttonwhite.length; i++) {
-                  buttonwhite[i].style.backgroundColor = buttonback;
-                  buttonwhite[i].style.color = buttoncolor;
-               }
-            }
-     } else { 
-         div.style.backgroundColor = '#313131';
-         div.style.backgroundImage = 'radial-gradient(#f7f7f744 2px, transparent 0)'
-         divpadproj.style.backgroundColor = '#171717'
-         inputwhite.style.backgroundColor = '#161616'
-         for (i = 0; i < buttonwhite.length; i++) {
-            buttonwhite[i].style.backgroundColor = '#272525';
-            buttonwhite[i].style.color = '#fff3f3';
-         }
-         
-     }
-     
+  async function Criareregistrarusuarios(nome,senha) {
+
+    const db = await open ({
+         filename: './banco.db',
+        driver: sqlite3.Database,
+
+    });
+
+    await db .run(
+        'CREATE TABLE IF NOT EXISTS usuarios ( id INTEGER PRIMARY KEY, nome TXT)'
+    );
+     await db.run (
+         'INSERT INTO usuarios (nome,senha) VALUES (?,?)' , [nome , senha]
+    );
+
+    console.log('Usuário registrado com sucesso!!');
+  }
+
+
+
+Criareregistrarusuarios('Kauã','Kauawd239238711')
+
+
+
+
+
+// function connect() {
+//     const mysql = require('mysql2')
+//     const connection = mysql.createConnection({
+//         host: "localhost",
+//         user: "root",
+//         password: "",
+//         database: "horastrabalhadas"
+
+//     })
+//     console.log("conectado com sucesso")
+//     return connection
+// }
+
+
+
+
+
+// function novo_proj() {
+//     const connection = connect()
+//     novoproj = capturarvalores()
+//     const novoproj = { nome:'calculadora' , data:'2024-05-28' , valorhora: 50 , descricao: 'seila' }
+//     connection.query('INSERT INTO projetos (nome, data, valorhora, descricao) VALUES (?,?,?,?)',
+//     [novoproj.nome, novoproj.data, novoproj.valorhora, novoproj.descricao], 
+//     (err, results) => {
+//         if (err) {
+//             console.error('Erro ao executar consulta:', err);
+//             return;
+//         }
+//         console.log('Registros da tabela "usuarios":', results.insertId);
+//     });
+
+//  }
  
-     }
-
-
-
-function capturarvalores () {
-   const nomeproj = document.getElementById('nome').value;
-   const valorhoraproj = parseFloat(document.getElementById('valorhora').value);
-   const descricaoproj = document.getElementById('descricao').value;
-   const dataproj = document.getElementById('data').value
-
-   const novoproj = {
-      nome: nomeproj,
-      data: dataproj,
-      descricao: descricaoproj,
-      valorhora: valorhoraproj
-   };
-
-   return novoproj;
-}
-
-
-
-
