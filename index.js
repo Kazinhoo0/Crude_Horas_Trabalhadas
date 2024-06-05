@@ -1,4 +1,5 @@
-// função para mudar a cor de fundo do site
+// Esta função, esta implementada no objeto button
+//com o objetivo de mudar a cor do site para branco, e consequêntimente preto novamente.
 function mudarcor(cordefundo, backimage, divproj, buttonback, buttoncolor, inputwhitecolor, whitelogin) {
 
    let checkbox = document.getElementById("checkbox");
@@ -39,7 +40,7 @@ function mudarcor(cordefundo, backimage, divproj, buttonback, buttoncolor, input
 }
 
 
-
+// função para mudar a cor de fundo dos botões do site, quando o usario colocar o cursor em cima.
 function mouseenter(backcolor, buttoncolor) {
    let botãocriarconta = document.getElementById('buttoncriarconta');
 
@@ -62,7 +63,7 @@ function mouseenter2 (backcolor,buttoncolor) {
 
 
 
-
+// função para mudar a cor de fundo dos botões do site, quando o usario tirar o mouse do mesmo.
 function mouseleave(backcolor, buttoncolor) {
    let botãocriarconta = document.getElementById('buttoncriarconta');
    let botãojatenhoconta = document.getElementById("buttonjatenhoconta");
@@ -80,6 +81,37 @@ function mouseleave2(backcolor, buttoncolor) {
       
       botãojatenhoconta.style.background = backcolor;
       botãojatenhoconta.style.color = buttoncolor;
+
+}
+
+
+// abri o pop do portifólio
+function abrirpop_porti(){ 
+   let portifólio 
+
+      portifólio = window.open("https://master--gorgeous-dango-a804e8.netlify.app/");
+
+   }
+//abri o pop do github
+function abrirpop_github () {
+   let github 
+   
+   github = window.open("https://github.com/Kazinhoo0");
+}
+//abri o pop do linkedin
+function abrirpop_linkd () {
+   let linkedin
+
+  linkedin = window.open("https://www.linkedin.com/in/kau%C3%A3-lopes-monteiro-330048214/","width = 1000px ")
+}
+
+
+function fecharPopUps(){
+
+   portifólio.close()
+   github.close()
+   linkedin.close()
+
 
 }
 

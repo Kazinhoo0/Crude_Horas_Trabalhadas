@@ -154,16 +154,16 @@ img {
 }
 
 .button_createaccount {
-  margin-left:160px; 
-  color:white; 
-  text-decoration:none; 
-  margin-top:20px; 
-  background-color:#8a2be2; 
+  margin-left: 160px;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  background-color: #8a2be2;
   border-radius: 5px;
   width: 150px;
   height: 20px;
   text-align: center;
-  
+
 }
 
 .button2:hover {
@@ -209,7 +209,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 .modal {
@@ -222,7 +222,7 @@ img {
   box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);
   border-radius: 10px;
   margin-left: 100px;
-  margin-top:15px;
+  margin-top: 15px;
 }
 
 .modal2 {
@@ -241,7 +241,7 @@ img {
 }
 
 .modal3 {
-  position:absolute;
+  position: absolute;
   flex-direction: column;
   width: 100%;
   max-width: 500px;
@@ -324,8 +324,8 @@ img {
   width: 150px;
   text-align: center;
   padding: 5px;
-  
-  
+
+
 
 }
 
@@ -445,7 +445,7 @@ img {
 }
 
 .toogle input:checked~.label {
-  color: rgba(255,0,0,0.8);
+  color: rgba(255, 0, 0, 0.8);
 }
 
 .toggle .button {
@@ -489,22 +489,22 @@ img {
   top: 0;
 }
 
-.toggle input:active ~ .button {
+.toggle input:active~.button {
   filter: blur(0.5px);
   box-shadow: 0 12px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
 }
 
-.toggle input:active ~ .label {
+.toggle input:active~.label {
   font-size: 26px;
   color: rgba(0, 0, 0, 0.45);
 }
 
-.toggle input:checked ~ .button {
+.toggle input:checked~.button {
   filter: blur(0.5px);
   box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
 }
 
-.toggle input:checked ~ .label {
+.toggle input:checked~.label {
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -520,10 +520,10 @@ img {
 
 
 .input__field {
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-    color: #8d8d8d;
-    width: 200px;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  color: #8d8d8d;
+  width: 200px;
 }
 
 
@@ -598,7 +598,7 @@ img {
   transition: 0.3s;
 }
 
-.checkbox:checked ~ .slider {
+.checkbox:checked~.slider {
   background-color: var(--light);
 }
 
@@ -617,11 +617,23 @@ img {
   transition: 0.3s;
 }
 
-.checkbox:checked ~ .slider::before {
+.checkbox:checked~.slider::before {
   -webkit-transform: translateX(50px);
   -ms-transform: translateX(50px);
   transform: translateX(50px);
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+/* Popupsstyle */
+
+.popupstyle {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid red;
+  margin-top: 150px;
+
+
 }
