@@ -78,8 +78,14 @@
                                     <input type="password" placeholder="">
                                     <br>
                                     <br>
-                                    <button style="margin-bottom:10px; background-color:purple; color:white; border-radius: 5px; border:1px; padding:5px;" type="button">Criar Conta</button>
-                                    <a class="button_createaccount " href="index_english.html">I have a account</a>
+                                    <button id="buttoncriarconta"
+                                        style="background-color: #8a2be2; color:#ffffff; border-radius: 5px; border: 1px;"
+                                        onclick="Criareregistrarusuarios()"
+                                        onmouseenter="mouseenter('#e161f1a9','#ffffff')"
+                                        onmouseleave="mouseleave('#8a2be2','#ffffff')" type="button">Create account</button>
+                                    <a id="buttonjatenhoconta" onmouseenter="mouseenter2('#e161f1a9','#ffffff')"
+                                        onmouseleave="mouseleave2('#8a2be2','#ffffff')" class="button_createaccount "
+                                        href="index.html">I have an account</a>
                                 </div>
                                 <div class="input">
                                     <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">Welcome to padprojects</p>
@@ -87,6 +93,18 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
+                            src="imagens/Portifólio_img.png"></button>
+    
+                    <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
+                            src="imagens/Linked_img.png"></button>
+    
+                    <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
+                            src="imagens/icons8-github-30.png"></button>
+                    <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
+                    
                 </div>
 
             </div>

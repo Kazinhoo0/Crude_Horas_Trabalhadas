@@ -628,12 +628,31 @@ img {
 
 /* Popupsstyle */
 
-.popupstyle {
+.popupstyle1 {
   width: 35px;
   height: 35px;
-  border-radius: 5px;
-  border: 1px solid red;
+  border-radius: 10px;
   margin-top: 150px;
+  margin-left: 460px;
+  
+
+
+}
+.popupstyle2 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 150px;
+  
+
+
+}
+.popupstyle3 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 150px;
+  
 
 
 }

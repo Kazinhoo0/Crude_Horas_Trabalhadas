@@ -43,14 +43,14 @@ function mudarcor(cordefundo, backimage, divproj, buttonback, buttoncolor, input
 // função para mudar a cor de fundo dos botões do site, quando o usario colocar o cursor em cima.
 function mouseenter(backcolor, buttoncolor) {
    let botãocriarconta = document.getElementById('buttoncriarconta');
+   let botãovoltarparaomenu = document.getElementById('botãovoltarparaomenu')
 
 
- 
+      botãovoltarparaomenu.style.backgroundColor = backcolor;
+      botãovoltarparaomenu.style.backgroundColor = buttoncolor;
       botãocriarconta.style.backgroundColor = backcolor;
       botãocriarconta.style.color = buttoncolor;
 
-      botãojatenhoconta.style.backgroundColor = backcolor;
-      botãojatenhoconta.style.color = buttoncolor;
 }
 
 function mouseenter2 (backcolor,buttoncolor) {
