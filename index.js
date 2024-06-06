@@ -39,6 +39,18 @@ function mudarcor(cordefundo, backimage, divproj, buttonback, buttoncolor, input
 
 }
 
+function mudarcorpopup () {
+   let corpopup = document.getElementById('popupid')
+
+  corpopup.style.backgroundColor = "#b4c2c7"
+}
+
+function mudarcorpopupleave() {
+   let corpopup = document.getElementById('popupid')
+
+    corpopup.style.backgroundColor = "#ffffff"
+}
+
 
 // função para mudar a cor de fundo dos botões do site, quando o usario colocar o cursor em cima.
 function mouseenter(backcolor, buttoncolor) {
