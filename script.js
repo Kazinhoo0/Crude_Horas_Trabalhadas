@@ -1,29 +1,76 @@
- import sqlite3 from 'sqlite3';
- import {open} from 'sqlite';
+import sqlite3 from 'sqlite3';
+import {open} from 'sqlite';
+
+
+  
+  
+
+  const sqlite = require('sqlite');
+  const sqlite3 = require('sqlite3');
+  const express = require('express');
+  const app = express();
+  
+  app.use(express.json());
+  
+  app.post('/registrar', async (req, res) => {
+      const nome = req.body.nome;
+      const senha = req.body.senha;
+
+      const db = await open ({
+        filename: './banco.db',
+       driver: sqlite3.Database,
+       });
+  
+      await db.run(
+          'CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nome TEXT, senha TEXT)'
+      );
+      await db.run(
+          'INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]
+      );
+  
+      res.send('Usuário registrado com sucesso!!');
+  });
+  
+  app.listen(3000, () => {
+      console.log('Servidor rodando na porta 3000');
+  });
 
 
 
-  async function Criareregistrarusuarios(nome,senha) {
 
-    const db = await open ({
-         filename: './banco.db',
-        driver: sqlite3.Database,
+//  async function Criareregistrarusuarios() {
 
-    });
+//   //   let nome = document.getElementById('nome').value
+//   //   let senha = document.getElementById('senha').value
 
-    await db .run(
-        'CREATE TABLE IF NOT EXISTS usuarios ( id INTEGER PRIMARY KEY, nome TXT)'
-    );
-     await db.run (
-         'INSERT INTO usuarios (nome,senha) VALUES (?,?)' , [nome , senha]
-    );
+//   const db = await open ({
+//  filename: './banco.db',
+// driver: sqlite3.Database,
+// });
 
-    console.log('Usuário registrado com sucesso!!');
-  }
+//   //   await db .run(
+//   //       'CREATE TABLE IF NOT EXISTS usuarios ( id INTEGER PRIMARY KEY, nome TEXT)'
+//   //   );
+//   //    await db.run (
+//   //        'INSERT INTO usuarios (nome,senha) VALUES (?,?)' , [nome , senha]
+//   //   );
+
+//   //   console.log('Usuário registrado com sucesso!!');
+//   // }
 
 
 
-Criareregistrarusuarios('Kauã','Kauawd239238711')
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -45,20 +92,3 @@ Criareregistrarusuarios('Kauã','Kauawd239238711')
 
 
 
-
-// function novo_proj() {
-//     const connection = connect()
-//     novoproj = capturarvalores()
-//     const novoproj = { nome:'calculadora' , data:'2024-05-28' , valorhora: 50 , descricao: 'seila' }
-//     connection.query('INSERT INTO projetos (nome, data, valorhora, descricao) VALUES (?,?,?,?)',
-//     [novoproj.nome, novoproj.data, novoproj.valorhora, novoproj.descricao], 
-//     (err, results) => {
-//         if (err) {
-//             console.error('Erro ao executar consulta:', err);
-//             return;
-//         }
-//         console.log('Registros da tabela "usuarios":', results.insertId);
-//     });
-
-//  }
- 

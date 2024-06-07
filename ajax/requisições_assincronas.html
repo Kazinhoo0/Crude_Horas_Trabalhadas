@@ -16,8 +16,7 @@
         // requisição não iniciada, status = 0
         //
 
-
-
+    
         function requisitarpagina(url) {
             //incluir o gif de loading
             let loadingbar = document.createElement('img')
@@ -29,21 +28,24 @@
             document.getElementById('conteudoimg').appendChild(loadingbar)
         }
             let ajax = new XMLHttpRequest();
+            
             // Com o metodo open ( temos a requisição estabelecida com o servidor sendo mostrada como = 1)
             ajax.open('GET', url);
-
             ajax.onreadystatechange = () => {
-                if (ajax.readyState == 4) {
-                    console.log('requisição finalizada com sucesso')
-                    document.getElementById('loading').remove();
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    document.getElementById('conteudoimg').innerHTML = ajax.responseText
+                    
+                    
+                    
+                }
+                if (ajax.readyState == 4 && ajax.status == 404) {
+                    document.getElementById('conteudoimg').innerHTML = ('requisição realizada porem com erro, erro numero 404 (Not Found)')
+                    
                 }
             }
 
-            ajax.send();
+            setTimeout(function(){ajax.send();}, 3000)  
             // logica para verificar o progresso da requisição
-
-
-
             //console.log(ajax.readyState)
             // console.log(ajax)
         }
@@ -72,11 +74,11 @@
         <div class="row mb-2">
             <div class="col-md-4 center"></div>
             <div class="col-md-4 center">
-                <a class="butões" href="#" onclick="requisitarpagina('pagina_1_conteudo.html')"
+                <a  href="#" onclick="requisitarpagina('pagina_1_conteudo.html')"
                     class="btn btn-primary">Página 1</a>
-                <a class="butões" href="#" onclick="requisitarpagina('pagina_2_conteudo.html')"
+                <a  href="#" onclick="requisitarpagina('pagina_2_conteudo.html')"
                     class="btn btn-primary">Página 2</a>
-                <a class="butões" href="#" onclick="requisitarpagina('pagina_3_conteudo.html')"
+                <a  href="#" onclick="requisitarpagina('pagina_3_conteudo.html')"
                     class="btn btn-primary">Página 3</a>
             </div>
             <div class="col-md-4 center"></div>

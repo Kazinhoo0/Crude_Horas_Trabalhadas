@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes HTML</title>
+    <script src="xmltojson.js"></script>
+
+    <script>
+        function getfilmes () {
+            let xmlhttps = new XMLHttpRequest();
+            xmlhttps.open('GET' , 'http://localhost/xml/filmes.xml')
+
+            xmlhttps.onreadystatechange = () => {
+                if(xmlhttps.readyState = 4 && xmlhttps.status == 200) {
+                    let xmlfilmes = xmlhttps.responseText
+                    console.log("Requisição feita com sucesso!")
+                    
+                }
+
+                if(xmlhttps.readyState = 4 && xmlhttps.status == 404) {
+                    let xmlfilmes = xmlhttps.responseText
+                    console.log("Requisição feita, mas com erros, erro: " + xmlhttps.status)
+                }
+            }
+            xmlhttps.send();
+        }
+    </script>
+</head>
+<body>
+    <nav class="nav navbar-light bglight mb-4">
+        <div class="container">
+            <div class="navbar-brand mb-0 h1">
+                <h3>Catálogo de filmes</h3>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row" >
+            <div class="col" >
+                <button type="button" onclick="getfilmes()" >Listar filmes</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
