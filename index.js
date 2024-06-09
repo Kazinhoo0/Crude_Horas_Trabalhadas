@@ -146,25 +146,23 @@ function capturarvalores() {
 }
 
 
-function registrarusuários () {
+function registrarusuários() {
    var nome = document.getElementById("nome").value;
    var senha = document.getElementById("senha").value;
-
+ 
    fetch('/registrar', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ nome: nome, senha: senha }),
-    })
-    .then(response => response.text())
-    .then(data => alert(data))
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-}
-
-
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+     },
+     body: JSON.stringify({ nome: nome, senha: senha }),
+   })
+   .then(response => response.text())
+   .then(data => alert(data))
+   .catch((error) => {
+     console.error('Error:', error);
+   });
+ }
 
 
 
