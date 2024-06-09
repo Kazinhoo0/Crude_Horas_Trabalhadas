@@ -1,26 +1,29 @@
-import sqlite3 from 'sqlite3';
-import {open} from 'sqlite';
+var mysql = require('mysql')
+import express from 'express';
+
+const app = express();
 
 
-  
-  
-
-  const sqlite = require('sqlite');
-  const sqlite3 = require('sqlite3');
-  const express = require('express');
-  const app = express();
-  
   app.use(express.json());
   
   app.post('/registrar', async (req, res) => {
       const nome = req.body.nome;
       const senha = req.body.senha;
 
-      const db = await open ({
-        filename: './banco.db',
-       driver: sqlite3.Database,
-       });
+      const conexão = mysql.createConnection({
+        host:localhost,
+        user:root,
+        password:"",
+        database:usuários
+      })
+
+      conexão.connect(function(err) {
+        if (err) throw err;
+        console.log(("conectado com sucesso."))
+      })
   
+
+      
       await db.run(
           'CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nome TEXT, senha TEXT)'
       );
@@ -36,6 +39,9 @@ import {open} from 'sqlite';
   });
 
 
+
+
+ 
 
 
 //  async function Criareregistrarusuarios() {

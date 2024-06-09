@@ -59,7 +59,7 @@ function mouseenter(backcolor, buttoncolor) {
 
 
       botãovoltarparaomenu.style.backgroundColor = backcolor;
-      botãovoltarparaomenu.style.backgroundColor = buttoncolor;
+      botãovoltarparaomenu.style.Color = buttoncolor;
       botãocriarconta.style.backgroundColor = backcolor;
       botãocriarconta.style.color = buttoncolor;
 
@@ -144,6 +144,27 @@ function capturarvalores() {
 
    return novoproj;
 }
+
+
+function registrarusuários () {
+   var nome = document.getElementById("nome").value;
+   var senha = document.getElementById("senha").value;
+
+   fetch('/registrar', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nome: nome, senha: senha }),
+    })
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+}
+
+
 
 
 
