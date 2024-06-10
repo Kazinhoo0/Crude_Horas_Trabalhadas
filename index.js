@@ -99,20 +99,20 @@ function mouseleave2(backcolor, buttoncolor) {
 
 // abri o pop do portifólio
 function abrirpop_porti(){ 
-   let portifólio 
+   var portifólio 
 
       portifólio = window.open("https://master--gorgeous-dango-a804e8.netlify.app/");
 
    }
 //abri o pop do github
 function abrirpop_github () {
-   let github 
+   var github 
    
    github = window.open("https://github.com/Kazinhoo0");
 }
 //abri o pop do linkedin
 function abrirpop_linkd () {
-   let linkedin
+   var linkedin
 
   linkedin = window.open("https://www.linkedin.com/in/kau%C3%A3-lopes-monteiro-330048214/","width = 1000px ")
 }
@@ -146,8 +146,62 @@ function capturarvalores() {
 }
 
 
+function requisiçãoDB () {
+
+   let ajax = new XMLHttpRequest();
+            
+            // Com o metodo open ( temos a requisição estabelecida com o servidor sendo mostrada como = 1)
+            ajax.open('GET', 'criarnovaconta.html');
+            ajax.onreadystatechange = () => {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    document.getElementById('conteudoimg').innerHTML = ajax.responseText
+                    
+                    
+                    
+                }
+                if (ajax.readyState == 4 && ajax.status == 404) {
+                    document.getElementById('conteudoimg').innerHTML = ('requisição realizada porem com erro, erro numero 404 (Not Found)')
+                    
+                }
+            }
+
+            setTimeout(function(){ajax.send();}, 3000) 
+
+}
 
 
 
+function requisitarpagina(url) {
+            //incluir o gif de loading
+            let loadingbar = document.createElement('img')
+            if (!document.getElementById('loading')){
+            loadingbar.src = 'loading.gif'
+            loadingbar.className = 'rounded mx-auto d-block'
+            loadingbar.id = 'loading'
+
+            document.getElementById('conteudoimg').appendChild(loadingbar)
+        }
+            let ajax = new XMLHttpRequest();
+            
+            // Com o metodo open ( temos a requisição estabelecida com o servidor sendo mostrada como = 1)
+            ajax.open('GET', url);
+            ajax.onreadystatechange = () => {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    document.getElementById('conteudoimg').innerHTML = ajax.responseText
+                    
+                    
+                    
+                }
+                if (ajax.readyState == 4 && ajax.status == 404) {
+                    document.getElementById('conteudoimg').innerHTML = ('requisição realizada porem com erro, erro numero 404 (Not Found)')
+                    
+                }
+            }
+
+            setTimeout(function(){ajax.send();}, 3000)  
+            // logica para verificar o progresso da requisição
+            //console.log(ajax.readyState)
+            // console.log(ajax)
+        }
 
 
