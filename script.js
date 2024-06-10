@@ -1,47 +1,55 @@
-var mysql = require('mysql')
-import express from 'express';
-var cors = require('cors')
+const express = require('express')
+import mysql from 'mysql';
 
+const con = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: "",
+  database: "usuários"
+});
 
 
 const app = express();
-
-app.use(cors())
-app.use(express.json());
-  
-  app.post('/registrar', async (req, res) => {
-      const nome = req.body.nome;
-      const senha = req.body.senha;
-
-      const conexão = mysql.createConnection({
-        host:'localhost',
-        user:'root',
-        password:"",
-        database:'usuários'
-      })
-
-      conexão.connect(function(err) {
-        if (err) throw err;
-        console.log(("conectado com sucesso."))
-      })
-  
+const port = 8000
 
 
-      var sql = 'INSERT INTO usuários (nome, senha) VALUES (?, ?)';
-         conexão.query(sql, [nome, senha] , function (err ,  result) {
-            if (err) throw err;
-            console.log('Comando efetuado com sucesso!');
-         });
-  });
-  
-  app.listen(5500, () => {
-      console.log('Servidor rodando na porta 3000');
-  });
+
+app.post('/registrar', (req, res) => {
+  const nome = req.body.nome;
+  const senha = req.body.senha;
+  con.query("INSERT INTO usuários (nome,senha) VALUES (?,?)", [nome, senha], (err, result) => {
+    if (err) {
+      console.error(err)
+      res.status(500).send("Erro ao inserir dados no banco de dados.");
+    } else {
+      res.send(result)
+    }
+
+  })
+})
+
+app.listen(port, () => {
+  console.log("Servidor iniciado com sucesso!")
+})
 
 
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //  async function Criareregistrarusuarios() {
