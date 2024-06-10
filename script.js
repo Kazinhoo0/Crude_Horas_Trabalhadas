@@ -1,41 +1,47 @@
-import sqlite3 from 'sqlite3';
-import {open} from 'sqlite';
+var mysql = require('mysql')
+import express from 'express';
+var cors = require('cors')
 
 
-  
-  
 
-  const sqlite = require('sqlite');
-  const sqlite3 = require('sqlite3');
-  const express = require('express');
-  const app = express();
-  
-  app.use(express.json());
+const app = express();
+
+app.use(cors())
+app.use(express.json());
   
   app.post('/registrar', async (req, res) => {
       const nome = req.body.nome;
       const senha = req.body.senha;
 
-      const db = await open ({
-        filename: './banco.db',
-       driver: sqlite3.Database,
-       });
+      const conexão = mysql.createConnection({
+        host:'localhost',
+        user:'root',
+        password:"",
+        database:'usuários'
+      })
+
+      conexão.connect(function(err) {
+        if (err) throw err;
+        console.log(("conectado com sucesso."))
+      })
   
-      await db.run(
-          'CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nome TEXT, senha TEXT)'
-      );
-      await db.run(
-          'INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]
-      );
-  
-      res.send('Usuário registrado com sucesso!!');
+
+
+      var sql = 'INSERT INTO usuários (nome, senha) VALUES (?, ?)';
+         conexão.query(sql, [nome, senha] , function (err ,  result) {
+            if (err) throw err;
+            console.log('Comando efetuado com sucesso!');
+         });
   });
   
-  app.listen(3000, () => {
+  app.listen(5500, () => {
       console.log('Servidor rodando na porta 3000');
   });
 
 
+
+
+ 
 
 
 //  async function Criareregistrarusuarios() {

@@ -59,7 +59,7 @@ function mouseenter(backcolor, buttoncolor) {
 
 
       botãovoltarparaomenu.style.backgroundColor = backcolor;
-      botãovoltarparaomenu.style.backgroundColor = buttoncolor;
+      botãovoltarparaomenu.style.Color = buttoncolor;
       botãocriarconta.style.backgroundColor = backcolor;
       botãocriarconta.style.color = buttoncolor;
 
