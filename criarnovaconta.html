@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -16,7 +15,7 @@
 
         <div id="wallpaperbox" class="container2">
             <div class="input_box">
-                <form id="wallpaperpadproj" class="form">
+                <form id="wallpaperpadproj" class="form" method="POST">
                     <a id="heading" href="index.html">PADPROJECTS</a>
                     <p class="p_cabecalho">SEJA BEM VINDO!!</p>
                     <div class="btn">
@@ -74,32 +73,29 @@
                                     </svg></button>
                             </div>
                             <div class="modal__body">
-                                <div class="input">
-                                    <p style="color: white;">Usuário: </p>
-                                    <input id="nome" type="text" placeholder="">
-                                    <br><br>
-                                    <p style="color: white;">Senha: </p>
-                                    <input id="senha" type="password" placeholder="">
-                                    <br>
-                                    <br>
-                                    <button id="buttoncriarconta"
-                                        style="background-color: #8a2be2; color:#ffffff; border-radius: 5px; border: 1px;"
-                                        onclick="registrarusuários()"
-                                        onmouseleave="mouseleave('#8a2be2','#ffffff')" value="Registrar" type="button">Criar
-                                        Conta</button>
-                                    <a id="buttonjatenhoconta" onmouseenter="mouseenter2('#e161f1a9','#ffffff')"
-                                        onmouseleave="mouseleave2('#8a2be2','#ffffff')" class="button_createaccount "
-                                        href="index.html">Já tenho uma conta</a>
-                                </div>
-                                <div class="input">
-                                    <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
-                                        MUITO BEM-VINDO AO PADPROJECTS </p>
-                                </div>
+                                <form id="registrationForm">
+                                    <div class="input">
+                                        <p style="color: white;">Usuário: </p>
+                                        <input id="nome" type="text" name="nome" placeholder="">
+                                        <br><br>
+                                        <p style="color: white;">Senha: </p>
+                                        <input id="senha" type="password" name="senha" placeholder="">
+                                        <br>
+                                        <br>
+                                        <button id="buttoncriarconta" class="stylebutton_" value="Registrar" type="submit">Criar Conta</button>
+                                        <a id="buttonjatenhoconta" class="button_createaccount href="index.html">Já tenho uma conta</a>
+                                    </div>
+                                    <div class="input">
+                                        <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
+                                            MUITO BEM-VINDO AO PADPROJECTS </p>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
+            
                     <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
                             src="imagens/Portifólio_img.png"></button>
     
@@ -113,10 +109,7 @@
 
             </div>
 
-
-
-
-
+            
         </div>
     </div>
 </body>
