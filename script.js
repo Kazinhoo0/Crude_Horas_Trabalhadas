@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const registrationForm = document.getElementById('registrationForm');
   if (registrationForm) {
     registrationForm.addEventListener('submit', function (event) {
-      event.preventDefault(); // Evita o envio padrão do formulário
+      event.preventDefault(); 
 
       const nome = document.getElementById('nome').value;
       const senha = document.getElementById('senha').value;
