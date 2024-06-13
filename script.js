@@ -147,41 +147,39 @@ function fecharPopUps(){
 
 
 
+// script.js (lado do navegador)
+
 document.addEventListener('DOMContentLoaded', function() {
   const registrationForm = document.getElementById('registrationForm');
   if (registrationForm) {
-    registrationForm.addEventListener('submit', function (event) {
-      event.preventDefault(); 
+    registrationForm.addEventListener('submit', function(event) {
+      event.preventDefault();
 
       const nome = document.getElementById('nome').value;
       const senha = document.getElementById('senha').value;
 
-      fetch('/registrar', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nome: nome, senha: senha }),
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Erro ao registrar usuário');
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/registrar', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            console.log('Usuário registrado com sucesso:', xhr.responseText);
+            // Aqui você pode exibir uma mensagem de sucesso ou redirecionar o usuário
+          } else {
+            console.error('Erro ao registrar usuário:', xhr.status);
+            // Aqui você pode exibir uma mensagem de erro ao usuário
+          }
         }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Success:', data);
-        // Exibir mensagem de sucesso ou redirecionar o usuário
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        // Exibir mensagem de erro
-      });
+      };
+      xhr.send(JSON.stringify({ nome: nome, senha: senha }));
     });
   } else {
     console.error('Elemento com id "registrationForm" não encontrado.');
   }
 });
+
+
 
 
 
