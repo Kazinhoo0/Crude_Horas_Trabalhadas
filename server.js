@@ -46,7 +46,7 @@ import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 
 const app = express();
-const port = 8000
+const port = 8085
 
 // Conectar ao banco de dados SQLite
 async function connectDB() {
@@ -63,16 +63,16 @@ async function connectDB() {
 }
 
 // Criar tabela se não existir
-async function createTable() {
-  connectDB()
-  try {
-    const db = await connectDB();
-    await db.exec("INSERT INTO usuários (nome,senha) VALUES (?,?)", [nome,senha]);
-    console.log('Tabela criada com sucesso.');
-  } catch (error) {
-    console.error('Erro ao criar tabela:', error);
-  }
-}
+ async function createTable() {
+   connectDB()
+   try {
+     const db = await connectDB();
+     await db.run("INSERT INTO usuarios (nome,senha) VALUES (?,?)", [nome,senha]);
+     console.log('Tabela criada com sucesso.');
+   } catch (error) {
+     console.error('Erro ao criar tabela:', error);
+   }
+ }
 
 // Middleware para analisar JSON
 app.use(express.json());
@@ -85,7 +85,7 @@ app.post('/registrar', async (req, res) => {
 
   try {
     const db = await connectDB();
-    const result = await db.run('INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]);
+    const result = await db.exec('INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]);
     console.log('Usuário registrado com sucesso:', result.lastID);
     res.status(200).send('Usuário registrado com sucesso.');
   } catch (error) {

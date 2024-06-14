@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const nome = document.getElementById('nome').value;
       const senha = document.getElementById('senha').value;
 
-      fetch('/registrar', {
+      fetch('http://127.0.0.1:8085/registrar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
