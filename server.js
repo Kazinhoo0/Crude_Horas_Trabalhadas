@@ -41,68 +41,68 @@
 // });
 
 
-import express from 'express';
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
+// import express from 'express';
+// import sqlite3 from 'sqlite3';
+// import { open } from 'sqlite';
 
-const app = express();
-const port = 8085
+// const app = express();
+// const port = 8085
 
-// Conectar ao banco de dados SQLite
-async function connectDB() {
-  try {
-    const db = await open({
-      filename: './database.db',
-      driver: sqlite3.Database
-    });
-    console.log('Conectado ao banco de dados SQLite.');
-    return db;
-  } catch (error) {
-    console.error('Erro ao conectar ao banco de dados:', error);
-  }
-}
+// // Conectar ao banco de dados SQLite
+// async function connectDB() {
+//   try {
+//     const db = await open({
+//       filename: './database.db',
+//       driver: sqlite3.Database
+//     });
+//     console.log('Conectado ao banco de dados SQLite.');
+//     return db;
+//   } catch (error) {
+//     console.error('Erro ao conectar ao banco de dados:', error);
+//   }
+// }
 
-// Criar tabela se não existir
- async function createTable() {
-   connectDB()
-   try {
-     const db = await connectDB();
-     await db.run("INSERT INTO usuarios (nome,senha) VALUES (?,?)", [nome,senha]);
-     console.log('Tabela criada com sucesso.');
-   } catch (error) {
-     console.error('Erro ao criar tabela:', error);
-   }
- }
+// // Criar tabela se não existir
+//  async function createTable() {
+//    connectDB()
+//    try {
+//      const db = await connectDB();
+//      await db.run("INSERT INTO usuarios (nome,senha) VALUES (?,?)", [nome,senha]);
+//      console.log('Tabela criada com sucesso.');
+//    } catch (error) {
+//      console.error('Erro ao criar tabela:', error);
+//    }
+//  }
 
-// Middleware para analisar JSON
-app.use(express.json());
+// // Middleware para analisar JSON
+// app.use(express.json());
 
-// Rota para registrar usuário
-app.post('/registrar', async (req, res) => {
-  const { nome, senha } = req.body;
-  console.log('Rota acessada:', req.path);
-  console.log(req.originalUrl)
+// // Rota para registrar usuário
+// app.post('/registrar', async (req, res) => {
+//   const { nome, senha } = req.body;
+//   console.log('Rota acessada:', req.path);
+//   console.log(req.originalUrl)
 
-  try {
-    const db = await connectDB();
-    const result = await db.exec('INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]);
-    console.log('Usuário registrado com sucesso:', result.lastID);
-    res.status(200).send('Usuário registrado com sucesso.');
-  } catch (error) {
-    console.error('Erro ao inserir dados no banco de dados:', error);
-    res.status(500).send('Erro ao inserir dados no banco de dados.');
-  }
-});
+//   try {
+//     const db = await connectDB();
+//     const result = await db.exec('INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]);
+//     console.log('Usuário registrado com sucesso:', result.lastID);
+//     res.status(200).send('Usuário registrado com sucesso.');
+//   } catch (error) {
+//     console.error('Erro ao inserir dados no banco de dados:', error);
+//     res.status(500).send('Erro ao inserir dados no banco de dados.');
+//   }
+// });
 
-// Iniciar o servidor
-async function startServer() {
-  await createTable();
-  app.listen(port, () => {
-    console.log(`Servidor iniciado com sucesso na porta ${port}`);
-  });
-}
+// // Iniciar o servidor
+// async function startServer() {
+//   await createTable();
+//   app.listen(port, () => {
+//     console.log(`Servidor iniciado com sucesso na porta ${port}`);
+//   });
+// }
 
-startServer();
+// startServer();
 
 
 

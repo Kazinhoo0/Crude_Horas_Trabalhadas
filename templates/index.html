@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 
 
@@ -39,7 +39,8 @@
             <div>
 
                 <a href="index_english.html">
-                    <img class="img_english" src="imagens/USA-PNG-Clipart.png" width="50px" height="50px">
+                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
+                        width="50px" height="50px">
                 </a>
 
                 <a href="index.html">
@@ -75,54 +76,56 @@
                                         </path>
                                     </svg></button>
                             </div>
-                            <div class="modal__body">
-                                <div class="input">
-                                    <p style="color: white;">Usuário: </p>
-                                    <input type="text" placeholder="">
-                                    <br><br>
-                                    <p style="color: white;">Senha: </p>
-                                    <input type="password" placeholder="">
-                                    <br>
-                                    <br>
-                                    <button
-                                        style="margin-bottom:10px; background-color:purple; color:white; border-radius: 5px; border:1px; padding:5px;"
-                                        type="button">ENTRAR</button>
-                                    <a class="button_createaccount " href="criarnovaconta.html">Criar uma conta</a>
-                                </div>
-                                <div class="input">
-                                    <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
-                                        EAI O QUE VAMOS
-                                        FAZER
-                                        HOJE ? </p>
-                                </div>
+                            <form action="/login" id="login" method="post">
+                                <div class="modal__body">
+                                    <div class="input">
+                                        <p style="color: white;">Usuário: </p>
+                                        <input type="text" name="nome" placeholder="Digite seu usuário">
+                                        <br><br>
+                                        <p style="color: white;">Senha: </p>
+                                        <input type="password" name="senha" placeholder="Digite sua senha">
+                                        <br>
+                                        <br>
+                                        <button
+                                            style="margin-bottom:10px; background-color:purple; color:white; border-radius: 5px; border:1px; padding:5px;"
+                                            type="submit">ENTRAR</button>
+                                        <a class="button_createaccount " href="criarnovaconta.html">Criar uma conta</a>
+                                    </div>
+                            </form>
+                            <div class="input">
+                                <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
+                                    EAI O QUE VAMOS
+                                    FAZER
+                                    HOJE ? </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                            src="imagens/Portifólio_img.png"></button>
+            </div>
+            <div>
+                <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
+                        src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
 
-                    <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                            src="imagens/Linked_img.png"></button>
+                <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
+                        src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
 
-                    <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                            src="imagens/icons8-github-30.png"></button>
-                    <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-
-                </div>
+                <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
+                        src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
+                <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
 
             </div>
 
-
-
-
-
-
-
-
-
         </div>
+
+
+
+
+
+
+
+
+
+    </div>
     </div>
 </body>
 

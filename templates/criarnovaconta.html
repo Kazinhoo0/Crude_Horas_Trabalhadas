@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static' , filename ='css/style.css')}}">
+    <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
+
 </head>
 
 <body>
@@ -35,7 +37,7 @@
             <div>
 
                 <a href="index_english.html">
-                    <img class="img_english" src="imagens/USA-PNG-Clipart.png" width="50px" height="50px">
+                    <img class="img_english" src="{{url_for('static' , filename = ('imagens/USA-PNG-Clipart.png')) }}" width="50px" height="50px">
                 </a>
 
                 <a href="index.html">
@@ -72,7 +74,7 @@
                                     </svg></button>
                             </div>
                             <div class="modal__body">
-                                <form id="registrationForm">
+                                <form action="/cadastrar" id="registrationForm">
                                     <div class="input">
                                         <p style="color: white;">Usuário: </p>
                                         <input id="nome" type="text" name="nome" placeholder="">
@@ -95,16 +97,16 @@
                     </div>
                 </div>
                 <div>
-            
-                    <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                            src="imagens/Portifólio_img.png"></button>
+                    <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
+                            src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
     
                     <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                            src="imagens/Linked_img.png"></button>
+                            src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
     
                     <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                            src="imagens/icons8-github-30.png"></button>
+                            src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
                     <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
+    
                 </div>
 
             </div>

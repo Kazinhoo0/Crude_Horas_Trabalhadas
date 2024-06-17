@@ -147,41 +147,41 @@ function fecharPopUps(){
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const registrationForm = document.getElementById('registrationForm');
-  if (registrationForm) {
-    registrationForm.addEventListener('submit', function (event) {
-      event.preventDefault(); 
+// document.addEventListener('DOMContentLoaded', function() {
+//   const registrationForm = document.getElementById('registrationForm');
+//   if (registrationForm) {
+//     registrationForm.addEventListener('submit', function (event) {
+//       event.preventDefault(); 
 
-      const nome = document.getElementById('nome').value;
-      const senha = document.getElementById('senha').value;
+//       const nome = document.getElementById('nome').value;
+//       const senha = document.getElementById('senha').value;
 
-      fetch('http://127.0.0.1:8085/registrar', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nome: nome, senha: senha }),
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Erro ao registrar usuário');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Success:', data);
-        // Exibir mensagem de sucesso ou redirecionar o usuário
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        // Exibir mensagem de erro
-      });
-    });
-  } else {
-    console.error('Elemento com id "registrationForm" não encontrado.');
-  }
-});
+//       fetch('http://127.0.0.1:8085/registrar', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ nome: nome, senha: senha }),
+//       })
+//       .then(response => {
+//         if (!response.ok) {
+//           throw new Error('Erro ao registrar usuário');
+//         }
+//         return response.json();
+//       })
+//       .then(data => {
+//         console.log('Success:', data);
+//         // Exibir mensagem de sucesso ou redirecionar o usuário
+//       })
+//       .catch((error) => {
+//         console.error('Error:', error);
+//         // Exibir mensagem de erro
+//       });
+//     });
+//   } else {
+//     console.error('Elemento com id "registrationForm" não encontrado.');
+//   }
+// });
 
 
 
