@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadProjects - TotalHorasProj</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 </head>
 
@@ -18,48 +18,52 @@
     <div class="container">
         <div id="wallpaperbox" class="container2">
             <div class="input_box">
-                
+
                 <form id="wallpaperpadproj" class="form">
-                    <a id ="heading" href="index.html">PADPROJECTS</a>
-                    <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p> 
+                    <a id ="heading" href="{{url_for('index')}}">PADPROJECTS</a>
+                    <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p>
                     <div class="btn">
-                        <a  class="button1"  href="novoprojeto.html">Novo Projeto</a>
-                        <a  class="button1"  href="viewproj.html">Ver projetos</a>
-                        <a  class="button1" href="tothorasproj.html">Total de Horas</a>
-                        <a class="button1" href="modifyvalorhora.html"">Modificar Valor/Hora</a>
+                        <a class="button1" href="{{url_for('novoprojeto')}}">Novo Projeto</a>
+                        <a class="button1" href="{{url_for('viewproj')}}">Ver projetos</a>
+                        <a class="button1" href="{{url_for('tothorasproj')}}">Total de Horas</a>
+                        <a class="button1" href="{{url_for('modifyvalorhora')}}">Modificar Valor/Hora</a>
 
                     </div>
-                    
+
                     <div>
-                        <a style="color: blueviolet; text-decoration: none; ;"
-                            href="historypag.html">Sobre o padprojects</a>
+                        <a style="color: blueviolet; text-decoration: none; ;" href="{{url_for('historypag')}}">Sobre o
+                            padprojects</a>
                     </div>
                 </form>
 
             </div>
 
             <div>
-                
+
                 <a href="tothorasproj_english.html">
-                    <img class="img_english" src="imagens/USA-PNG-Clipart.png" width="50px" height="50px">
+                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
+                        width="50px" height="50px">
                 </a>
-    
+
                 <a href="tothorasproj.html">
-                    <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png" width="55px" height="35px">
+                    <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
+                        width="55px" height="35px">
                 </a>
-    
-            </div> 
-    
-    
+
+            </div>
+
+
             <div class="toggle-switch">
                 <label class="switch-label">
-                    <input id= "checkbox" onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')" type="checkbox" class="checkbox">                  
+                    <input id="checkbox"
+                        onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')"
+                        type="checkbox" class="checkbox">
                     <span class="slider"></span>
                 </label>
             </div>
-        
 
-            
+
+
             <div class="new_div">
                 <div id="inputwhite" class="div_input">
                     <div class="container">
@@ -74,44 +78,45 @@
                                 <div class="input">
 
                                     <label class="input__label">Nome projeto</label>
-                                    <input class="input__field" type="text"> 
+                                    <input class="input__field" type="text">
                                     <p class="input__description">O título não pode ter mais que 32 caracteres</p>
-                                
+
                                 </div>
 
                                 <div class="input">
                                     <label class="input__label">Descrição</label>
                                     <textarea class="input__field input__field--textarea"></textarea>
-                                    <p class="input__description">Faça uma boa descrição do seu projeto, para que todos possam saber para que ele serve.</p>
-                                </div>  
+                                    <p class="input__description">Faça uma boa descrição do seu projeto, para que todos
+                                        possam saber para que ele serve.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                            src="imagens/Portifólio_img.png"></button>
-    
+                    <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
+                            src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
+
                     <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                            src="imagens/Linked_img.png"></button>
-    
+                            src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
+
                     <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                            src="imagens/icons8-github-30.png"></button>
+                            src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
                     <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-                    
+
                 </div>
-    
+
             </div>
-            
-        
+
+
 
         </div>
 
-        
+
 
     </div>
-  
-    
+
+
 </body>
 
 </html>

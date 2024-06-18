@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padprojects - Modify Value/Hours</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 </head>
 
@@ -22,14 +22,14 @@
                     <a id="heading" href="index_english.html">PADPROJECTS</a>
                     <p class="p_cabecalho">WHAT YOU WANT TO DO NOW ?</p>
                     <div  class="btn">
-                        <a class="button1 buttonwhite" href="novoprojeto_english.html">New Project</a>
-                        <a class="button1 buttonwhite" href="viewproj_english.html">View Project</a>
-                        <a class="button1 buttonwhite" href="tothorasproj_english.html">View Total Hours</a>
-                        <a class="button1 buttonwhite" href="modifyvalorhora_english.html">Modify Value/Hours</a>
+                        <a class="button1 buttonwhite" href="{{url_for('novoprojeto_english')}}">New Project</a>
+                        <a class="button1 buttonwhite" href="{{url_for('viewproj_english')}}">View Project</a>
+                        <a class="button1 buttonwhite" href="{{url_for('tothorasproj_english')}}">View Total Hours</a>
+                        <a class="button1 buttonwhite" href="{{url_for('modifyvalorhora_english')}}">Modify Value/Hours</a>
                    
                     </div>
                         <div>
-                            <a style=" color: blueviolet; text-decoration: none;" href="historypag_english.html">About Us</a>
+                            <a style=" color: blueviolet; text-decoration: none; " href="{{url_for('historypag_english')}}">About us</a>
                     </div>
                 </form>
 
@@ -38,7 +38,8 @@
         <div>
                 
             <a href="modifyvalorhora_english.html">
-                <img class="img_english" src="imagens/USA-PNG-Clipart.png" width="50px" height="50px">
+                <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
+                        width="50px" height="50px">
             </a>
 
             <a href="modifyvalorhora.html">
