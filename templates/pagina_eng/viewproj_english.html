@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PADPROJECTS - Ver Projetos</title>
+    <title>PADPROJECTS - View Projects</title>
     <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
-    <script src="{{url_for ('static' , filename = 'js/script.js')}}"></script>
+    <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 </head>
 
@@ -20,46 +20,41 @@
         <div id="wallpaperbox" class="container2">
             <div class="input_box">
                 <form id="wallpaperpadproj" class="form">
-                    <a id="heading" href="index.html">PADPROJECTS</a>
-                    <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p>
-                    <div class="btn">
-                        <a class="button1" href="novoprojeto.html">Novo Projeto</a>
-                        <a class="button1" href="viewproj.html">Ver projetos</a>
-                        <a class="button1" href="tothorasproj.html">Total de Horas</a>
-                        <a class="button1" href="modifyvalorhora.html"">Modificar Valor/Hora</a>
-
-                        </div>
+                    <a id="heading" href="index_english.html">PADPROJECTS</a>
+                    <p class="p_cabecalho">WHAT YOU WANT TO DO NOW ?</p>
+                    <div  class="btn">
+                        <a class="button1 buttonwhite" href="{{url_for('novoprojeto_english')}}">New Project</a>
+                        <a class="button1 buttonwhite" href="{{url_for('viewproj_english')}}">View Project</a>
+                        <a class="button1 buttonwhite" href="{{url_for('tothorasproj_english')}}">View Total Hours</a>
+                        <a class="button1 buttonwhite" href="{{url_for('modifyvalorhora_english')}}">Modify Value/Hours</a>
+                   
+                    </div>
                         <div>
-                            <a style=" color: blueviolet; text-decoration: none;" href="historypag.html">Sobre o
-                            padprojects</a>
+                            <a style=" color: blueviolet; text-decoration: none; " href="{{url_for('historypag_english')}}">About us</a>
                     </div>
                 </form>
 
             </div>
 
             <div>
-
+                
                 <a href="viewproj_english.html">
-                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}" width="50px" height="50px">
+                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
+                        width="50px" height="50px">
                 </a>
 
                 <a href="viewproj.html">
-                    <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
-                        width="55px" height="35px">
+                    <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png" width="55px" height="35px">
                 </a>
 
-            </div>
-
+            </div> 
+            
             <div class="toggle-switch">
                 <label class="switch-label">
-                    <input id="checkbox"
-                        onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')"
-                        type="checkbox" class="checkbox">
+                    <input id= "checkbox" onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')" type="checkbox" class="checkbox">                    
                     <span class="slider"></span>
                 </label>
             </div>
-
-
 
 
             <div class="new_div">
@@ -68,7 +63,7 @@
 
                         <div id="loginwhite" class="modal2">
                             <div class="modal__header">
-                                <span class="modal__title">Projetos Cadastrados</span><button
+                                <span class="modal__title">Registered Projects</span><button
                                     class="button button--icon"><svg width="24" viewBox="0 0 24 24" height="24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         < <path fill="none" d="M0 0h24v24H0V0z">
@@ -80,7 +75,7 @@
                             </div>
                             <div class="modal__body">
                                 <div class="input">
-                                    <label class="input__label">Nome projeto</label>
+                                    <label class="input__label">Name Project</label>
                                     <input class="input__field" type="text">
                                     <input class="input__field" type="text">
                                     <input class="input__field" type="text">
@@ -89,13 +84,10 @@
                                     <input class="input__field" type="text">
                                     <input class="input__field" type="text">
                                     <input class="input__field" type="text">
-                                    <input id="botãovoltarparaomenu" class="input__field" type="text"> <a
-                                        class="style_backmenu" href="index.html">Voltar para o menu</a>
-                                    <p class="input__description">Você tem X projetos cadastrados</p>
-
+                                    <input class="input__field" type="text"> <a class="style_backmenu" href="index_english.html">Return to menu</a>
                                 </div>
-
-
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -103,14 +95,14 @@
                 <div>
                     <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
                             src="imagens/Portifólio_img.png"></button>
-
+    
                     <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
                             src="imagens/Linked_img.png"></button>
-
+    
                     <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
                             src="imagens/icons8-github-30.png"></button>
                     <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-
+                    
                 </div>
 
             </div>

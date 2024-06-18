@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
-    <link rel="stylesheet" href="{{url_for('static' , filename ='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
     <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
 
 </head>
@@ -16,18 +16,18 @@
 
         <div id="wallpaperbox" class="container2">
             <div class="input_box">
-                <form id="wallpaperpadproj" class="form" method="POST">
-                    <a id="heading" href="index.html">PADPROJECTS</a>
+                <form id="wallpaperpadproj" class="form">
+                    <a id ="heading" href="{{url_for('index')}}">PADPROJECTS</a>
                     <p class="p_cabecalho">SEJA BEM VINDO!!</p>
                     <div class="btn">
-                        <a class="button1" href="novoprojeto.html">Novo Projeto</a>
-                        <a class="button1" href="viewproj.html">Ver projetos</a>
-                        <a class="button1" href="tothorasproj.html">Total de Horas</a>
-                        <a class="button1" href="modifyvalorhora.html"">Modificar Valor/Hora</a>
+                        <a class="button1" href="{{url_for('novoprojeto')}}">Novo Projeto</a>
+                        <a class="button1" href="{{url_for('viewproj')}}">Ver projetos</a>
+                        <a class="button1" href="{{url_for('tothorasproj')}}">Total de Horas</a>
+                        <a class="button1" href="{{url_for('modifyvalorhora')}}">Modificar Valor/Hora</a>
 
                     </div>
-                        <div>
-                            <a style=" color: blueviolet; text-decoration: none;" href="historypag.html">Sobre o
+                    <div>
+                        <a style="color: blueviolet; text-decoration: none; ;" href="{{url_for('historypag')}}">Sobre o
                             padprojects</a>
                     </div>
                 </form>
@@ -36,11 +36,12 @@
 
             <div>
 
-                <a href="index_english.html">
-                    <img class="img_english" src="{{url_for('static' , filename = ('imagens/USA-PNG-Clipart.png')) }}" width="50px" height="50px">
+                <a href="pagina_eng/index_english.html">
+                    <img class="img_english" src="{{url_for('static' , filename = ('imagens/USA-PNG-Clipart.png')) }}"
+                        width="50px" height="50px">
                 </a>
 
-                <a href="index.html">
+                <a href="pagina_eng/index.html">
                     <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
                         width="55px" height="35px">
                 </a>
@@ -74,7 +75,7 @@
                                     </svg></button>
                             </div>
                             <div class="modal__body">
-                                <form action="/cadastrar" id="registrationForm">
+                                <form action="/cadastrar" id="registrationForm" method="post">
                                     <div class="input">
                                         <p style="color: white;">Usuário: </p>
                                         <input id="nome" type="text" name="nome" placeholder="">
@@ -83,11 +84,14 @@
                                         <input id="senha" type="password" name="senha" placeholder="">
                                         <br>
                                         <br>
-                                        <button id="buttoncriarconta" class="stylebutton_" value="Registrar" type="submit">Criar Conta</button>
-                                        <a id="buttonjatenhoconta" class="button_createaccount href="index.html">Já tenho uma conta</a>
+                                        <button id="buttoncriarconta" class="stylebutton_" value="Registrar"
+                                            type="submit">Criar Conta</button>
+                                        <a id="buttonjatenhoconta" class="button_createaccount href=" index.html">Já
+                                            tenho uma conta</a>
                                     </div>
                                     <div class="input">
-                                        <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
+                                        <p
+                                            style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
                                             MUITO BEM-VINDO AO PADPROJECTS </p>
                                     </div>
                                 </form>
@@ -99,19 +103,19 @@
                 <div>
                     <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
                             src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
-    
+
                     <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
                             src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
-    
+
                     <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
                             src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
                     <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-    
+
                 </div>
 
             </div>
 
-            
+
         </div>
     </div>
 </body>

@@ -19,17 +19,18 @@
         <div id="wallpaperbox" class="container2">
             <div class="input_box">
                 <form id="wallpaperpadproj" class="form">
-                    <a id="heading" href="index.html">PADPROJECTS</a>
+                    <a id="heading" href="{{url_for('index')}}">PADPROJECTS</a>
                     <p class="p_cabecalho">SEJA BEM VINDO!!</p>
                     <div class="btn">
-                        <a class="button1 buttonwhite" href="novoprojeto.html">Novo Projeto</a>
-                        <a class="button1 buttonwhite" href="viewproj.html">Ver projetos</a>
-                        <a class="button1 buttonwhite" href="tothorasproj.html">Total de Horas</a>
-                        <a class="button1 buttonwhite" href="modifyvalorhora.html"">Modificar Valor/Hora</a>
+                        <a class="button1 buttonwhite" href="{{url_for('novoprojeto')}}">Novo Projeto</a>
+                        <a class="button1 buttonwhite" href="{{url_for('viewproj')}}">Ver projetos</a>
+                        <a class="button1 buttonwhite" href="{{url_for('tothorasproj')}}">Total de Horas</a>
+                        <a class="button1 buttonwhite" href="{{url_for('modifyvalorhora')}}"">Modificar Valor/Hora</a>
 
                     </div>
                         <div>
-                            <a style=" color: blueviolet; text-decoration: none;" href="historypag.html">Sobre o
+                            <a style=" color: blueviolet; text-decoration: none; ;"
+                            href="{{url_for('historypag')}}">Sobre o
                             padprojects</a>
                     </div>
                 </form>
@@ -38,7 +39,7 @@
 
             <div>
 
-                <a href="index_english.html">
+                <a href="{{url_for('indexenglish')}}">
                     <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
                         width="50px" height="50px">
                 </a>

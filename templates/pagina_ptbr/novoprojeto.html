@@ -20,17 +20,17 @@
         <div id="wallpaperbox" class="container2">
             <div class="input_box">
                 <form id="wallpaperpadproj" class="form">
-                    <a id="heading" href="index.html">PADPROJECTS</a>
+                    <a id ="heading" href="{{url_for('index')}}">PADPROJECTS</a>
                     <p class="p_cabecalho">O QUE QUER FAZER AGORA ?</p>
                     <div class="btn">
-                        <a class="button1" href="novoprojeto.html">Novo Projeto</a>
-                        <a class="button1" href="viewproj.html">Ver projetos</a>
-                        <a class="button1" href="tothorasproj.html">Total de Horas</a>
-                        <a class="button1" href="modifyvalorhora.html"">Modificar Valor/Hora</a>
+                        <a class="button1" href="{{url_for('novoprojeto')}}">Novo Projeto</a>
+                        <a class="button1" href="{{url_for('viewproj')}}">Ver projetos</a>
+                        <a class="button1" href="{{url_for('tothorasproj')}}">Total de Horas</a>
+                        <a class="button1" href="{{url_for('modifyvalorhora')}}">Modificar Valor/Hora</a>
 
-                        </div>
-                        <div>
-                            <a style=" color: blueviolet; text-decoration: none;" href="historypag.html">Sobre o
+                    </div>
+                    <div>
+                        <a style="color: blueviolet; text-decoration: none; ;" href="{{url_for('historypag')}}">Sobre o
                             padprojects</a>
                     </div>
                 </form>
@@ -40,7 +40,8 @@
             <div>
 
                 <a href="novoprojeto_english.html">
-                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}" width="50px" height="50px">
+                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
+                        width="50px" height="50px">
                 </a>
 
                 <a href="novoprojeto.html">
@@ -102,14 +103,14 @@
                 <div>
                     <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
                             src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
-    
+
                     <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
                             src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
-    
+
                     <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
                             src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
                     <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-    
+
                 </div>
 
             </div>
