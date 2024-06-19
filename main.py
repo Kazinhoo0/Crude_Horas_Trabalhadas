@@ -10,26 +10,31 @@ app.config['SECRET_KEY'] = 'Kaue182023'
 
 
 #se o usuário não acessar nenhuma página específica, ira ser direcionado para o index.html
+
+@app.route('/indexhome')
+def indexhome() :
+    return render_template('pagina_ptbr/index.html')
+
 @app.route('/')
 def home() :
     return render_template('pagina_ptbr/index.html')
 
 @app.route('/verprojetos')
-def verprojetos () :
-    return render_template('viewproj.html')
+def verprojetos() :
+    return render_template('pagina_ptbr/viewproj.html')
 
 
 
-@app.route('/novoprojeto')
-def novoprojeto () :
-    return render_template('novoprojeto.html')
+@app.route('/index', methods = ["POST"])
 
-
-@app.route('/index', methods = ['POST'])
-def index():
-
+def index () :
     nome = request.form.get('nome')
     senha = request.form.get('senha')
+
+
+    if nome == 'adm' and senha == 'Kaua1987231' :
+        return render_template('pagina_ptbr/novoprojeto.html')
+    
 
     conect_DB = mysql.connector.connect(
         host="localhost",
@@ -37,43 +42,27 @@ def index():
         password = "",
         database = "usuários"
     )
-    cont = 0
     if conect_DB.is_connected():
         print("Banco de dados conectado com sucesso")
         cursor = conect_DB.cursor()
-        cursor.execute('select * from usuarios')
-        usuariosDB = cursor.fetchall()
-        # comando ="""INSERT INTO usuários_cadastrados (nome, senha) VALUES ()"""
+        comando = ("select * from usuarios where nome = %s and senha = %s ")
+        cursor.execute(comando, (nome,senha))
+        usuario = cursor.fetchone()
         
-        # cursor.execute(comando)
+        conect_DB.close()
+        cursor.close()
+
+        if usuario :
+            flash('Login efetuado com sucesso!') 
+            return render_template('pagina_ptbr/novopreto.html')
+
+
+        if not usuario :
+            flash("Nome de usuario ou senha incorretos!") 
+            return redirect(url_for('index'))
         
-        for usuario in usuariosDB:
-            
-            cont += 1
-            
-            usuarioNome = str(usuario[0])
-            usuariosenha = str(usuario[2])
-            
-            
-            if nome == "adm" and senha == "000123" :
-                return redirect('/criarconta')
-            
-            if usuarioNome == nome and usuariosenha == senha:
-                return render_template('novoprojeto.html')
 
-            if cont >= len(usuariosDB):
-                flash('Usuario Inválido')
-                return redirect("/")
-    else :
-        return redirect("/")
-
-
-
-
-
-
-
-
+    return render_template('pagina_ptbr/index.html')
 
 
 
@@ -119,10 +108,6 @@ def criarconta() :
         
 
 
-# @app.route('/verprojetos')
-# def verprojetos() :
-#     return render_template("viewproj.html")
-
 
 # @app.route('/index', methods = ["POST"])
 
@@ -161,32 +146,33 @@ def criarconta() :
 
 
 @app.route('/modifyvalorhora')
-def modifyvalorhora () :
+def modifyvalorhora() :
     return render_template('pagina_ptbr/modifyvalorhora.html')
 
 @app.route('/tothorasproj')
 
-def tothorasproj () :
+def tothorasproj() :
     return render_template('pagina_ptbr/tothorasproj.html')
 
 @app.route('/viewproj')
 def viewproj() :
     return render_template('pagina_ptbr/viewproj.html')
 
-# @app.route('/novoprojeto')
-
-def novoprojeto () :
+@app.route('/novoprojeto')
+def novoprojeto() :
     return render_template('pagina_ptbr/novoprojeto.html')
 
 @app.route('/historypag')
-def historypag () :
+def historypag() :
     return render_template("pagina_ptbr/historypag.html")
 #--------------------------------------               ROTAS DA PAGINA EM INGLES-------------------------------------------------------------------#
 
 
 @app.route('/indexenglish', methods = ["POST"])
 
-def indexenglish () :
+def indexenglish() :
+
+
     conect_DB = mysql.connector.connect(
                 host="localhost",
                 user = "root",
@@ -199,31 +185,32 @@ def indexenglish () :
         cursor = conect_DB.cursor()
         cursor.execute("select * from usuarios")
         data = cursor.fetchall()
-    
-    return render_template('pagina_eng/index_english.html', datas= data)
+
+
+    return render_template('pagina_eng/index_english.html')
 
 
 @app.route('/historypagenglish')
-def historypagenglish () :
+def historypagenglish() :
     return render_template("pagina_eng/historypag_english.html")
 
 @app.route('/modifyvalorhoraenglish')
-def modifyvalorhoraenglish () :
+def modifyvalorhoraenglish() :
       return render_template('pagina_eng/modifyvalorhora_english.html')
 
 @app.route('/tothorasprojenglish')
 
-def tothorasprojenglish () :
+def tothorasprojenglish() :
       return render_template('pagina_eng/tothorasproj_english.html')
 
 @app.route('/viewprojenglish')
-def viewprojenglish () :
+def viewprojenglish() :
      return render_template('pagina_eng/viewproj_english.html')
 
 @app.route('/novoprojetoenglish')
 
-def novoprojetoenglish () :
-     return render_template('pagina_eng/novoprojeto_english.html')
+def novoprojetoenglish() :
+    return render_template('pagina_eng/novoprojeto_english.html')
 
 
 

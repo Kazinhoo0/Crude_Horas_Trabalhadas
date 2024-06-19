@@ -21,15 +21,15 @@
                     <p class="p_cabecalho">YOU ARE WELCOME!!</p>
 
                     <div class="btn">
-                        <a class="button1 buttonwhite" href="{{url_for('novoprojeto_english')}}">New Project</a>
-                        <a class="button1 buttonwhite" href="{{url_for('viewproj_english')}}">View Project</a>
-                        <a class="button1 buttonwhite" href="{{url_for('tothorasproj_english')}}">View Total Hours</a>
-                        <a class="button1 buttonwhite" href="{{url_for('modifyvalorhora_english')}}">Modify Value/Hours</a>
+                        <a class="button1 buttonwhite" href="{{url_for('novoprojetoenglish')}}">New Project</a>
+                        <a class="button1 buttonwhite" href="{{url_for('viewprojenglish')}}">View Project</a>
+                        <a class="button1 buttonwhite" href="{{url_for('tothorasprojenglish')}}">View Total Hours</a>
+                        <a class="button1 buttonwhite" href="{{url_for('modifyvalorhoraenglish')}}">Modify Value/Hours</a>
                    
                     </div>
 
                         <div>
-                            <a style=" color: blueviolet; text-decoration: none; " href="{{url_for('historypag_english')}}">About us</a>
+                            <a style=" color: blueviolet; text-decoration: none; " href="{{url_for('historypagenglish')}}">About us</a>
                     </div>
 
                 </form>
@@ -43,7 +43,7 @@
                         width="50px" height="50px">
                 </a>
 
-                <a href="index.html">
+                <a href="{{url_for('index')}}">
                     <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png" width="55px" height="35px">
                 </a>
 
@@ -70,6 +70,7 @@
                                         <path fill="none" d="M0 0h24v24H0V0z"></path>
                                         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg></button>
                             </div>
+                            <form action="/indexenglish" method="post"></form>
                             <div class="modal__body">
                                 <div class="input">
                                     <p style="color: white;">Usarname: </p>
@@ -86,6 +87,7 @@
                                     <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">WHAT ARE WE DOING TODAY ?</p>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
