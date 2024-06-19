@@ -73,29 +73,39 @@
                                         </path>
                                     </svg></button>
                             </div>
+                        <form action='/novoprojeto' method='post'   >
                             <div class="modal__body">
                                 <div class="input">
                                     <label class="input__label">Nome projeto</label>
-                                    <input id="nomeprojeto" class="input__field" type="text">
+                                    <input name='nomeprojeto' id="nomeprojeto" class="input__field" type="text">
                                     <p class="input__description">O título não pode ter mais que 32 caracteres</p>
                                 </div>
                                 <div class="input2">
                                     <label class="input__label">Data:</label>
-                                    <input id="data" class="input__field2" type="text">
+                                    <input name='data' id="data" class="input__field2" type="date">
                                     <label class="input__label">Valor/hora:</label>
-                                    <input id="valorhora" class="input__field2" type="text">
+                                    <input name='valorhora' id="valorhora" class="input__field2" type="text">
                                     <!-- <p class="input__description">O título não pode ter mais que 32 caracteres</p> -->
                                 </div>
                                 <div class="input">
                                     <label class="input__label2">Descrição</label>
-                                    <textarea id="descricao" class="input__field input__field--textarea"></textarea>
+                                    <textarea name='descricao' id="descricao" class="input__field input__field--textarea"></textarea>
                                     <p class="input__description">Faça uma boa descrição do seu projeto, para que todos
                                         possam saber para que ele serve.</p>
                                 </div>
                                 <div class="modal__footer">
                                     <button onclick="novo_proj()" class="button button--primary">Criar projeto</button>
                                 </div>
+                                {% set menssagem = get_flashed_messages() %}
+                                            {% if menssagem  %}
+                                                
+                                                <p class="alert_notuser" >{{menssagem[3]}} </p> 
+                                              
+
+                                            {% endif %}
+
                             </div>
+                        </form>   
                         </div>
                     </div>
                 </div>

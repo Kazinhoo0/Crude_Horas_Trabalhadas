@@ -72,24 +72,21 @@
 
                                 <!-- 0<span class="modal__title">Projetos Cadastrados</span><button class="button button--icon"><svg width="24" viewBox="0 0 24 24" height="24" xmlns="http://www.w3.org/2000/svg"> -->
                             </div>
-
-                            <div class="modal__body">
-
-                                <div class="input">
-
-                                    <label class="input__label">Nome projeto</label>
-                                    <input class="input__field" type="text">
-                                    <p class="input__description">O título não pode ter mais que 32 caracteres</p>
-
+                            <form action="/tothorasproj" method="post"  >
+                                <div class="modal__body">
+                                    <div class="input">
+                                        <label class="input__label">Nome projeto</label>
+                                        <input name='nomeprojeto' class="input__field" type="text">
+                                        <p class="input__description">Insira o nome do projeto em que vai adicionar horas trabalhadas.</p>
+                                    </div>
+                                    <div class="input">
+                                        <label class="input__label">Adicionar horas</label>
+                                        <input name='horastrab' type="text"> class="input__field input__field--textarea"></input>
+                                        <p class="input__description">Adicione aqui quantas horas você trabalhou hoje no seu projeto.</p>
+                                    </div>
+                                    <button onclick="novo_proj()" class="button button--primary">Alterar</button>
                                 </div>
-
-                                <div class="input">
-                                    <label class="input__label">Descrição</label>
-                                    <textarea class="input__field input__field--textarea"></textarea>
-                                    <p class="input__description">Faça uma boa descrição do seu projeto, para que todos
-                                        possam saber para que ele serve.</p>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
