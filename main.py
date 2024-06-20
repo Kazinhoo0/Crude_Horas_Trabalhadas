@@ -2,6 +2,7 @@
 from flask import Flask, render_template, redirect, request, flash , url_for
 import mysql.connector
 from mysql.connector import Error
+from time import sleep
 
 
 
@@ -15,6 +16,10 @@ app.config['SECRET_KEY'] = 'Kaue182023'
 def indexhome() :
     return render_template('pagina_ptbr/index.html')
 
+@app.route('/indexhomeenglish')
+def indexhomeenglish() :
+    return render_template('pagina_eng/index_english.html')
+
 @app.route('/')
 def home() :
     return render_template('pagina_ptbr/index.html')
@@ -25,13 +30,12 @@ def verprojetos() :
 
 
 
-@app.route('/index', methods = ["POST"])
+@app.route('/index', methods = ["POST", 'GET'])
 
 def index () :
     nome = request.form.get('nome')
     senha = request.form.get('senha')
-
-
+  
     if nome == 'adm' and senha == 'Kaua1987231' :
         return render_template('pagina_ptbr/novoprojeto.html')
     
@@ -53,13 +57,13 @@ def index () :
         cursor.close()
 
         if usuario :
+            sleep(4.0)
             flash('Login efetuado com sucesso!') 
             return render_template('pagina_ptbr/novoprojeto.html')
 
-
         if not usuario :
             flash("Nome de usuario ou senha incorretos!") 
-            return redirect(url_for('index'))
+            return redirect(url_for('indexhome'))
         
 
     return render_template('pagina_ptbr/index.html')

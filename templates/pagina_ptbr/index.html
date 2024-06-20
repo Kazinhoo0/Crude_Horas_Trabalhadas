@@ -21,7 +21,7 @@
         <div id="wallpaperbox" class="container2">
             <div class="input_box">
                 <form id="wallpaperpadproj" class="form">
-                    <a id="heading" href="{{url_for('index')}}">PADPROJECTS</a>
+                    <a id ="heading" href="{{url_for('indexhome')}}">PADPROJECTS</a>
                     <p class="p_cabecalho">SEJA BEM VINDO!!</p>
                     <div class="btn">
                         <a class="button1 buttonwhite" href="{{url_for('novoprojeto')}}">Novo Projeto</a>
@@ -41,7 +41,7 @@
 
             <div>
 
-                <a href="{{url_for('indexenglish')}}">
+                <a href="{{url_for('indexhomeenglish')}}">
                     <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
                         width="50px" height="50px">
                 </a>
@@ -92,11 +92,12 @@
                                         <button
                                             style="margin-bottom:10px; background-color:purple; color:white; border-radius: 5px; border:1px; padding:5px;"
                                             type="submit">ENTRAR</button>
-                                        <a class="button_createaccount " href="criarnovaconta.html">Criar uma conta</a>
+                                        <a class="button_createaccount " href="{{url_for('criarnovaconta')}}">Criar uma conta</a>
+                                        
                                         {% set menssagem = get_flashed_messages() %}
                                             {% if menssagem  %}
                                                 
-                                                <p class="alert_notuser" >{{menssagem[0]}} </p> 
+                                                <p class="alert_notuser" >{{menssagem[2]}} </p> 
                                               
 
                                             {% endif %}
