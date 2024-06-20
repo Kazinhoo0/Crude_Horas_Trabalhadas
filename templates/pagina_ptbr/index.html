@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/imagens/favicon-32x32.png">
     <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 
@@ -14,12 +15,12 @@
 
 <body>
 
-   
+
 
     <div class="container">
 
         <div id="wallpaperbox" class="container2">
-            <div class="input_box">
+            <!-- <div class="input_box">
                 <form id="wallpaperpadproj" class="form">
                     <a id ="heading" href="{{url_for('indexhome')}}">PADPROJECTS</a>
                     <p class="p_cabecalho">SEJA BEM VINDO!!</p>
@@ -37,17 +38,17 @@
                     </div>
                 </form>
 
-            </div>
+            </div> -->
 
-            <div>
+            <div id='centericonsflag'>
 
                 <a href="{{url_for('indexhomeenglish')}}">
-                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
+                    <img class="img_english2" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
                         width="50px" height="50px">
                 </a>
 
-                <a href="index.html">
-                    <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
+                <a href="{{url_for('indexhome')}}">
+                    <img class="img_brazil2" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
                         width="55px" height="35px">
                 </a>
 
@@ -65,13 +66,13 @@
 
 
 
-            <div class="new_div">
-                <div id="inputwhite" class="div_input">
+            <div class="new_div2">
+                <div id="inputwhite" class="div_input2">
                     <div class="container">
 
                         <div id="loginwhite" class="modal">
                             <div class="modal__header">
-                                <span class="modal__title">Fazer Login</span><button class="button button--icon"><svg
+                                <span class="modal__title">Login</span><button class="button button--icon"><svg
                                         width="24" viewBox="0 0 24 24" height="24" xmlns="http://www.w3.org/2000/svg">
                                         <path fill="none" d="M0 0h24v24H0V0z"></path>
                                         <path
@@ -83,24 +84,25 @@
                                 <div class="modal__body">
                                     <div class="input">
                                         <p style="color: white;">Usuário: </p>
-                                        <input type="text" name="nome" placeholder="Digite seu usuário">
+                                        <input type="text" name="nome" placeholder="Seu username aqui.">
                                         <br><br>
                                         <p style="color: white;">Senha: </p>
-                                        <input type="password" name="senha" placeholder="Digite sua senha">
+                                        <input type="password" name="senha" placeholder="Sua senha aqui.">
                                         <br>
                                         <br>
                                         <button
                                             style="margin-bottom:10px; background-color:purple; color:white; border-radius: 5px; border:1px; padding:5px;"
                                             type="submit">ENTRAR</button>
-                                        <a class="button_createaccount " href="{{url_for('criarnovaconta')}}">Criar uma conta</a>
-                                        
-                                        {% set menssagem = get_flashed_messages() %}
-                                            {% if menssagem  %}
-                                                
-                                                <p class="alert_notuser" >{{menssagem[2]}} </p> 
-                                              
+                                        <a class="button_createaccount " href="{{url_for('criarnovaconta')}}">Criar uma
+                                            conta</a>
 
-                                            {% endif %}
+                                        {% set menssagem = get_flashed_messages() %}
+                                        {% if menssagem %}
+
+                                        <p class="alert_notuser">{{menssagem[2]}} </p>
+
+
+                                        {% endif %}
 
                                     </div>
                             </form>
@@ -112,32 +114,19 @@
                             </div>
                         </div>
                     </div>
+                    <button id="popupid" class="popupstyle1_1" onclick="abrirpop_porti()" type="button"> <img
+                            src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
+
+                    <button class="popupstyle2_2" onclick="abrirpop_linkd()" type="button"><img
+                            src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
+
+                    <button class="popupstyle3_3" onclick="abrirpop_github()" type="button"><img
+                            src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
+                    <p style="margin-left: 215px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
+
                 </div>
             </div>
-            <div>
-                <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                        src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
-
-                <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                        src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
-
-                <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                        src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
-                <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-
-            </div>
-
         </div>
-
-
-
-
-
-
-
-
-
-    </div>
     </div>
 </body>
 

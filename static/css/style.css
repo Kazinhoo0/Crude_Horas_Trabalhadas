@@ -3,6 +3,7 @@
   height: 100%;
 }
 
+
 img {
   max-width: 100%;
   height: auto;
@@ -25,6 +26,13 @@ img {
   width: 80%;
 }
 
+.new_div2 {
+  height: 940px;
+  width: 100%;
+
+}
+
+
 .div_input {
   width: 700px;
   height: 650px;
@@ -33,6 +41,16 @@ img {
   background-color: #161616;
 
 }
+
+.div_input2 {
+  width: 700px;
+  height: 650px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #161616;
+
+}
+
 
 .form {
   display: flex;
@@ -536,6 +554,12 @@ img {
   top: 30px;
 }
 
+.img_english2 {
+  margin-left: 1580px;
+  position: absolute;
+  top: 33px;
+}
+
 .img_link {
   margin-left: 1600px;
   position: absolute;
@@ -547,6 +571,12 @@ img {
 
 .img_brazil {
   margin-left: 1040px;
+  position: absolute;
+  top: 39px;
+}
+
+.img_brazil2 {
+  margin-left: 1500px;
   position: absolute;
   top: 39px;
 }
@@ -563,7 +593,7 @@ img {
 /*   BOTÃO DE TROCAR COR DE FUNDO DE TELA  */
 .toggle-switch {
   position: relative;
-  left: 1200px;
+  left: 1660px;
   top: 20px;
   width: 100px;
   height: 50px;
@@ -634,10 +664,22 @@ img {
   border-radius: 10px;
   margin-top: 150px;
   margin-left: 460px;
+}
 
+.popupstyle1_1 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 750px;
+  margin-left: 270px;
+}
 
-
-
+.popupstyle1__1 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 200px;
 }
 
 .popupstyle2 {
@@ -646,17 +688,22 @@ img {
   border-radius: 10px;
   margin-top: 150px;
 
+}
 
+.popupstyle2_2 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 150px;
 
 }
 
-.popupstyle3:hover,.popupstyle1:hover,.popupstyle2:hover {
-  background-color: #b8abab;
-}
+.popupstyle2__2 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 150px;
 
-
-.button_createaccount:hover {
-  background-color: rgb(165, 56, 168);
 }
 
 
@@ -669,13 +716,40 @@ img {
 }
 
 
+.popupstyle3_3 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 150px;
+
+}
+
+
+.popupstyle3__3 {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 150px;
+
+}
+
+.popupstyle3:hover,
+.popupstyle1:hover,
+.popupstyle2:hover {
+  background-color: #b8abab;
+}
+
+
+.button_createaccount:hover {
+  background-color: rgb(165, 56, 168);
+}
 
 .stylebutton_ {
-  
-background-color: #8a2be2;
-color:#ffffff;
-border-radius: 5px;
-border: 1px;
+
+  background-color: #8a2be2;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 1px;
 }
 
 

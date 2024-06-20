@@ -4,7 +4,8 @@ import mysql.connector
 from mysql.connector import Error
 from time import sleep
 
-
+def dormir():
+    return sleep(2.0)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Kaue182023'
@@ -14,18 +15,22 @@ app.config['SECRET_KEY'] = 'Kaue182023'
 
 @app.route('/indexhome')
 def indexhome() :
+    dormir()
     return render_template('pagina_ptbr/index.html')
 
 @app.route('/indexhomeenglish')
 def indexhomeenglish() :
+    dormir()
     return render_template('pagina_eng/index_english.html')
 
 @app.route('/')
 def home() :
+    dormir()
     return render_template('pagina_ptbr/index.html')
 
-@app.route('/verprojetos')
-def verprojetos() :
+@app.route('/viewproj')
+def viewproj() :
+    dormir()
     return render_template('pagina_ptbr/viewproj.html')
 
 
@@ -57,15 +62,16 @@ def index () :
         cursor.close()
 
         if usuario :
-            sleep(4.0)
-            flash('Login efetuado com sucesso!') 
+            flash('Login efetuado com sucesso!')
+            dormir() 
             return render_template('pagina_ptbr/novoprojeto.html')
 
         if not usuario :
             flash("Nome de usuario ou senha incorretos!") 
+            dormir()
             return redirect(url_for('indexhome'))
         
-
+    dormir()
     return render_template('pagina_ptbr/index.html')
 
 
@@ -79,10 +85,12 @@ def criarnovaconta() :
         
         if not nome and not senha:
             flash('O campo Usuário e senha são obrigatorios')
+            dormir()
             return render_template('pagina_ptbr/criarnovaconta.html')
         
         if len(senha) < 8 :
             flash('Sua senha precisa ter mais que 8 caracteres,porfavor tente novamente.')
+            dormir()
             return redirect(url_for('criarnovaconta') )
             
             
@@ -143,6 +151,7 @@ def modifyvalorhora() :
                 cursor.execute(comando, (novovalor,nomeprojeto))
                 conect_DB.commit()
                 flash('Projeto registrado com sucesso!')
+                dormir()
                 return redirect(url_for('modifyvalorhora'))
                 
         except Error as e :
@@ -154,7 +163,7 @@ def modifyvalorhora() :
                 cursor.close()
                 conect_DB.close()
     
-        
+    dormir() 
     return render_template('pagina_ptbr/modifyvalorhora.html')
 
 @app.route('/tothorasproj' , methods = ['POST' , 'GET'])
@@ -184,6 +193,7 @@ def tothorasproj() :
                 cursor.execute(comando, (novahora,nomeprojeto))
                 conect_DB.commit()
                 flash('Projeto registrado com sucesso!')
+                dormir()
                 return redirect(url_for('tothorasproj'))
                 
         except Error as e :
@@ -195,15 +205,12 @@ def tothorasproj() :
                 cursor.close()
                 conect_DB.close()
     
-        
+    dormir()  
     return render_template('pagina_ptbr/tothorasproj.html')
     
     
     
 
-@app.route('/viewproj')
-def viewproj() :
-    return render_template('pagina_ptbr/viewproj.html')
 
 @app.route('/novoprojeto', methods = ['POST' , 'GET'])
 def novoprojeto() :
@@ -240,6 +247,7 @@ def novoprojeto() :
                 cursor.execute(comando, (nomeprojeto,data,valorhora,descricao))
                 conect_DB.commit()
                 flash('Projeto registrado com sucesso!')
+                dormir()
                 return redirect(url_for('novoprojeto'))
                 
         except Error as e :
@@ -284,30 +292,36 @@ def indexenglish() :
 
 @app.route('/historypagenglish')
 def historypagenglish() :
+    dormir()
     return render_template("pagina_eng/historypag_english.html")
 
 @app.route('/modifyvalorhoraenglish')
 def modifyvalorhoraenglish() :
+      dormir()
       return render_template('pagina_eng/modifyvalorhora_english.html')
 
 @app.route('/tothorasprojenglish')
 
 def tothorasprojenglish() :
+      dormir()
       return render_template('pagina_eng/tothorasproj_english.html')
 
 @app.route('/viewprojenglish')
 def viewprojenglish() :
+     dormir()
      return render_template('pagina_eng/viewproj_english.html')
 
 @app.route('/novoprojetoenglish')
 
 def novoprojetoenglish() :
+    dormir()
     return render_template('pagina_eng/novoprojeto_english.html')
 
 
 @app.route('/criarnovacontaenglish')
 
 def criarnovacontaenglish () :
+    dormir()
     return render_template('pagina_eng/criarnovaconta_english.html')
 
 
@@ -315,3 +329,6 @@ def criarnovacontaenglish () :
 
 if __name__ == "__main__" :
     app.run(debug = True)  
+
+
+

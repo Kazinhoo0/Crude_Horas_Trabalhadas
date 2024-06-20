@@ -14,3 +14,8 @@ sql = """CREATE TABLE IF NOT EXISTS "usuarios" (
 cursor.execute(sql)
 conect.commit()
 cursor.close()
+
+
+
+
+

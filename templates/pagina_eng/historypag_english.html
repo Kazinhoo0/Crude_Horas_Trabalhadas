@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padprojects -About us</title>
     <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/imagens/favicon-32x32.png">
     <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 </head>
@@ -81,15 +82,15 @@
                     </div>
                 </div>
                 <div>
-                    <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                            src="imagens/Portifólio_img.png"></button>
-    
-                    <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                            src="imagens/Linked_img.png"></button>
-    
-                    <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                            src="imagens/icons8-github-30.png"></button>
-                    <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
+                <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
+                        src="{{url_for('static' , filename = 'imagens/Portifólio_img.png')}}"></button>
+
+                <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
+                        src="{{url_for('static' , filename = 'imagens/Linked_img.png')}}"></button>
+
+                <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
+                        src="{{url_for('static' , filename = 'imagens/icons8-github-30.png')}}"></button>
+                <p style="margin-left: 400px; color:rgb(219, 219, 211);">Developed by Kauã Lopes Monteiro</p>
                     
                 </div>
 

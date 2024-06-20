@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/imagens/favicon-32x32.png">
     <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 </head>
@@ -74,19 +75,19 @@
                             <div class="modal__body">
                                 <div class="input">
                                     <label class="input__label">Name Project</label>
-                                    <input id="nomeprojeto" class="input__field" type="text">
+                                    <input placeholder="Name project here." id="nomeprojeto" class="input__field" type="text">
                                     <p class="input__description">The title cannot be longer than 32 characters</p>
                                 </div>
                                 <div class="input2">
                                     <label class="input__label">Date:</label>
-                                    <input id="data" class="input__field2" type="text">
+                                    <input placeholder="Date you started working on the project." id="data" class="input__field2" type="date">
                                     <label class="input__label">Value/Hour:</label>
-                                    <input id="valorhora" class="input__field2" type="text">
+                                    <input placeholder="Ex: 150." id="valorhora" class="input__field2" type="text">
                                     <!-- <p class="input__description">O título não pode ter mais que 32 caracteres</p> -->
                                 </div>
                                 <div class="input">
                                     <label class="input__label2">Description project</label>
-                                    <textarea id="descricao" class="input__field input__field--textarea"></textarea>
+                                    <textarea placeholder="Do a concise description of project here." id="descricao" class="input__field input__field--textarea"></textarea>
                                     <p class="input__description">Make a good description of your project, so that everyone
                                         know what it's for.</p>
                                 </div>
@@ -100,14 +101,14 @@
                 </div>
                 <div>
                     <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                            src="imagens/Portifólio_img.png"></button>
-    
-                    <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                            src="imagens/Linked_img.png"></button>
-    
-                    <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                            src="imagens/icons8-github-30.png"></button>
-                    <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
+                        src="{{url_for('static' , filename = 'imagens/Portifólio_img.png')}}"></button>
+
+                <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
+                        src="{{url_for('static' , filename = 'imagens/Linked_img.png')}}"></button>
+
+                <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
+                        src="{{url_for('static' , filename = 'imagens/icons8-github-30.png')}}"></button>
+                <p style="margin-left: 400px; color:rgb(219, 219, 211);">Developed by Kauã Lopes Monteiro</p>
                     
                 </div>
 

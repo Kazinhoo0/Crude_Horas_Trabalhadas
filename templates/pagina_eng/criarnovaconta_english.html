@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/imagens/favicon-32x32.png">
     <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 
@@ -16,7 +17,7 @@
     <div class="container">
 
         <div id="wallpaperbox" class="container2">
-            <div class="input_box">
+            <!-- <div class="input_box">
                 <form id="wallpaperpadproj" class="form">
                     <a id="heading" href="{{url_for('indexhomeenglish')}}">PADPROJECTS</a>
                     <p class="p_cabecalho">SEJA BEM VINDO!!</p>
@@ -33,21 +34,21 @@
                             href="{{url_for('historypagenglish')}}">About us</a>
                     </div>
                 </form>
-            </div>
+            </div> -->
 
-            <div>
+            <div id='centericonsflag'>
 
-                <a href="index_english.html">
-                    <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
+                <a href="{{url_for('indexhomeenglish')}}">
+                    <img class="img_english2" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
                         width="50px" height="50px">
                 </a>
 
-                <a href="{{url_for('criarnovaconta')}}">
-                    <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
+                <a href="{{url_for('indexhome')}}">
+                    <img class="img_brazil2" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
                         width="55px" height="35px">
                 </a>
 
-            </div>
+            </div> 
 
             <div class="toggle-switch">
                 <label class="switch-label">
@@ -61,8 +62,8 @@
 
 
 
-            <div class="new_div">
-                <div id="inputwhite" class="div_input">
+            <div class="new_div2">
+                <div id="inputwhite" class="div_input2">
                     <div class="container">
 
                         <div id="loginwhite" class="modal">
@@ -78,10 +79,10 @@
                             <div class="modal__body">
                                 <div class="input">
                                     <p style="color: white;">Username: </p>
-                                    <input type="text" placeholder="">
+                                    <input type="text" placeholder="Your username here.">
                                     <br><br>
                                     <p style="color: white;">Password: </p>
-                                    <input type="password" placeholder="">
+                                    <input type="password" placeholder="Your password here.">
                                     <br>
                                     <br>
                                     <button id="buttoncriarconta"
@@ -101,18 +102,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <button class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                            src="imagens/Portifólio_img.png"></button>
+                    <button id="popupid" class="popupstyle1__1" onclick="abrirpop_porti()" type="button"> <img
+                        src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
 
-                    <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                            src="imagens/Linked_img.png"></button>
+                    <button class="popupstyle2__2" onclick="abrirpop_linkd()" type="button"><img
+                        src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
 
-                    <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                            src="imagens/icons8-github-30.png"></button>
-                    <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-
+                    <button class="popupstyle3__3" onclick="abrirpop_github()" type="button"><img
+                        src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
+                    <p style="margin-left: 215px; color:rgb(219, 219, 211);">Developed by Kauã Lopes Monteiro</p>
                 </div>
 
             </div>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadProjects - TotalHorasProj</title>
     <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/imagens/favicon-32x32.png">
     <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
     <script type="module" src="server.js"></script>
 </head>
@@ -81,7 +82,7 @@
                                     </div>
                                     <div class="input">
                                         <label class="input__label">Adicionar horas</label>
-                                        <input name='horastrab' type="text"> class="input__field input__field--textarea"></input>
+                                        <input name='horastrab' type="text"></input>
                                         <p class="input__description">Adicione aqui quantas horas você trabalhou hoje no seu projeto.</p>
                                     </div>
                                     <button onclick="novo_proj()" class="button button--primary">Alterar</button>

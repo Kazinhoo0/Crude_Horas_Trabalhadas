@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PADPROJECTS - Cadastrar projetos</title>
     <link rel="stylesheet" href="{{url_for('static' , filename = 'css/style.css')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/imagens/favicon-32x32.png">
     <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
 
 </head>
@@ -15,7 +16,7 @@
     <div class="container">
 
         <div id="wallpaperbox" class="container2">
-            <div class="input_box">
+            <!-- <div class="input_box">
                 <form id="wallpaperpadproj" class="form">
                     <a id ="heading" href="{{url_for('indexhome')}}">PADPROJECTS</a>
                     <p class="p_cabecalho">SEJA BEM VINDO!!</p>
@@ -32,17 +33,17 @@
                     </div>
                 </form>
 
-            </div>
+            </div> -->
 
-            <div>
+            <div id='centericonsflag'>
 
-                <a href="{{url_for('criarnovacontaenglish')}}">
-                    <img class="img_english" src="{{url_for('static' , filename = ('imagens/USA-PNG-Clipart.png')) }}"
+                <a href="{{url_for('indexhomeenglish')}}">
+                    <img class="img_english2" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
                         width="50px" height="50px">
                 </a>
 
-                <a href="{{url_for('criarnovaconta')}}">
-                    <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
+                <a href="{{url_for('indexhome')}}">
+                    <img class="img_brazil2" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
                         width="55px" height="35px">
                 </a>
 
@@ -78,23 +79,24 @@
                                 <form action="/criarnovaconta" id="registrationForm" method="post">
                                     <div class="input">
                                         <p style="color: white;">Usuário: </p>
-                                        <input id="nome" type="text" name="nome" placeholder="">
+                                        <input id="nome" type="text" name="nome" placeholder="Seu username aqui.">
                                         <br><br>
                                         <p style="color: white;">Senha: </p>
-                                        <input id="senha" type="password" name="senha" placeholder="">
+                                        <input id="senha" type="password" name="senha" placeholder="Sua password aqui.">
                                         <br>
                                         <br>
                                         <button id="buttoncriarconta" class="stylebutton_" value="Registrar"
                                             type="submit">Criar Conta</button>
-                                        <a id="buttonjatenhoconta" class="button_createaccount" href="{{url_for('indexhome')}}">Já
+                                        <a id="buttonjatenhoconta" class="button_createaccount"
+                                            href="{{url_for('indexhome')}}">Já
                                             tenho uma conta </a>
-                                            {% set menssagem = get_flashed_messages() %}
-                                            {% if menssagem  %}
-                                                
-                                                <p class="alert_notuser" >{{menssagem[0]}} </p> 
-                                              
+                                        {% set menssagem = get_flashed_messages() %}
+                                        {% if menssagem %}
 
-                                            {% endif %}
+                                        <p class="alert_notuser">{{menssagem[0]}} </p>
+
+
+                                        {% endif %}
                                     </div>
                                     <div class="input">
                                         <p
