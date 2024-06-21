@@ -18,11 +18,6 @@ def indexhome() :
     dormir()
     return render_template('pagina_ptbr/index.html')
 
-@app.route('/indexhomeenglish')
-def indexhomeenglish() :
-    dormir()
-    return render_template('pagina_eng/index_english.html')
-
 @app.route('/')
 def home() :
     dormir()
@@ -48,10 +43,10 @@ def viewproj() :
         comando = ("SELECT id, nome FROM projetos WHERE usuario_id = %s")
         cursor.execute(comando, (usuario_id,))
         projetos = cursor.fetchall()
-
+        
         cursor.close()
         conect_DB.close()
-    
+        dormir()
     
         return render_template('pagina_ptbr/viewproj.html', projetos = projetos)
     
@@ -103,6 +98,18 @@ def index () :
         return render_template('pagina_ptbr/index.html')
     else: 
         return render_template(url_for('indexhome'))
+    
+    
+    
+@app.route('/logoff' , methods = ['POST' , 'GET'])  
+
+def logoff () :
+    
+    if 'usuario_id' in session :
+        session.pop('usuario_id', None)
+        flash('Sessão finalizada!')
+    
+    return redirect(url_for('indexhome'))
 
 
 
@@ -139,6 +146,7 @@ def criarnovaconta() :
                 comando = ("INSERT INTO usuarios (nome,senha) VALUES (%s,%s)")
                 cursor.execute(comando, (nome , senha))
                 conect_DB.commit()
+                dormir()
                 flash('Conta criada com sucesso!')
                 return redirect(url_for('home'))
                 
@@ -158,6 +166,14 @@ def criarnovaconta() :
 
 @app.route('/modifyvalorhora', methods = ["POST" , "GET"])
 def modifyvalorhora() :
+    
+    if 'usuario_id' not in session:
+        flash('Por favor, faça login ou crie uma conta, para acessar essa página')
+        print('Usuário não cadastrado')
+        return redirect(url_for('indexhome'))     
+    
+    
+    
     
     if request.method == 'POST':
         nomeprojeto = request.form.get ('nomeprojeto')
@@ -303,6 +319,12 @@ def novoprojeto() :
 def historypag() :
     return render_template("pagina_ptbr/historypag.html")
 #--------------------------------------               ROTAS DA PAGINA EM INGLES-------------------------------------------------------------------#
+
+
+@app.route('/indexhomeenglish')
+def indexhomeenglish() :
+    dormir()
+    return render_template('pagina_eng/index_english.html')
 
 
 @app.route('/indexenglish', methods = ["POST"])

@@ -106,7 +106,10 @@
                                             {% endif %}
 
                             </div>
-                        </form>   
+                        </form>
+                        <form action = "{{url_for('logoff')}}"  method = 'POST'>
+                            <button type='submit'>Sair</button>
+                        </form>    
                         </div>
                     </div>
                 </div>
