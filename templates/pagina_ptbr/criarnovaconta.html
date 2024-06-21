@@ -37,19 +37,20 @@
 
             <div id='centericonsflag'>
 
-                <a href="{{url_for('indexhomeenglish')}}">
+                <a href="{{url_for('criarnovacontaenglish')}}">
                     <img class="img_english2" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
                         width="50px" height="50px">
                 </a>
 
-                <a href="{{url_for('indexhome')}}">
+                <a href="{{url_for('criarnovaconta')}}">
                     <img class="img_brazil2" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
                         width="55px" height="35px">
                 </a>
 
+
             </div>
 
-            <div class="toggle-switch">
+            <div class="toggle-switch1">
                 <label class="switch-label">
                     <input id="checkbox"
                         onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')"
@@ -61,13 +62,13 @@
 
 
 
-            <div class="new_div">
-                <div id="inputwhite" class="div_input">
+            <div class="new_div2">
+                <div id="inputwhite" class="div_input2">
                     <div class="container">
 
                         <div id="loginwhite" class="modal">
                             <div class="modal__header">
-                                <span class="modal__title">Criar Conta</span><button class="button button--icon"><svg
+                                <span class="modal__title">Criar conta</span><button class="button button--icon"><svg
                                         width="24" viewBox="0 0 24 24" height="24" xmlns="http://www.w3.org/2000/svg">
                                         <path fill="none" d="M0 0h24v24H0V0z"></path>
                                         <path
@@ -101,32 +102,26 @@
                                     <div class="input">
                                         <p
                                             style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
-                                            MUITO BEM-VINDO AO PADPROJECTS </p>
+                                            BEM-VINDO AO PADPROJECTS </p>
                                     </div>
                                 </form>
                             </div>
-                            <script src="script.js"></script>
                         </div>
+                        <button id="popupid" class="popupstyle1_1" onclick="abrirpop_porti()" type="button"> <img
+                                src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
+
+                        <button class="popupstyle2_2" onclick="abrirpop_linkd()" type="button"><img
+                                src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
+
+                        <button class="popupstyle3_3" onclick="abrirpop_github()" type="button"><img
+                                src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
+                        <p style="margin-left: 215px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro
+                        </p>
+
                     </div>
                 </div>
-                <div>
-                    <button id="popupid" class="popupstyle1" onclick="abrirpop_porti()" type="button"> <img
-                            src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
-
-                    <button class="popupstyle2" onclick="abrirpop_linkd()" type="button"><img
-                            src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
-
-                    <button class="popupstyle3" onclick="abrirpop_github()" type="button"><img
-                            src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
-                    <p style="margin-left: 400px; color:rgb(219, 219, 211);">Desenvolvido por Kauã Lopes Monteiro</p>
-
-                </div>
-
             </div>
-
-
         </div>
-    </div>
 </body>
 
 </html>

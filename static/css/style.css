@@ -23,7 +23,7 @@ img {
 .new_div {
 
   height: 940px;
-  width: 80%;
+  width: 100%;
 }
 
 .new_div2 {
@@ -39,6 +39,7 @@ img {
   margin: auto;
   margin-top: 100px;
   background-color: #161616;
+  border-radius: 10px;
 
 }
 
@@ -48,6 +49,7 @@ img {
   margin: auto;
   margin-top: 100px;
   background-color: #161616;
+  border-radius: 10px;
 
 }
 
@@ -184,10 +186,32 @@ img {
 
 }
 
+.button_createaccount:hover {
+  background-color: #a538a8;
+}
+
+
+
 .button2:hover {
   background-color: black;
   color: white;
 }
+
+
+.button_entrar_style {
+  margin-bottom: 10px;
+  background-color: #8a2be2;
+  color: white;
+  border-radius: 5px;
+  border: 1px;
+  padding: 5px;
+}
+
+
+.button-entrar_style:hover {
+  background-color: #a538a8;
+}
+
 
 .button3 {
   margin-bottom: 3em;
@@ -593,6 +617,19 @@ img {
 /*   BOTÃO DE TROCAR COR DE FUNDO DE TELA  */
 .toggle-switch {
   position: relative;
+  left: 1200px;
+  top: 20px;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+
+}
+
+.toggle-switch1 {
+  position: relative;
   left: 1660px;
   top: 20px;
   width: 100px;
@@ -740,10 +777,6 @@ img {
 }
 
 
-.button_createaccount:hover {
-  background-color: rgb(165, 56, 168);
-}
-
 .stylebutton_ {
 
   background-color: #8a2be2;
@@ -758,4 +791,17 @@ img {
   color: red;
   margin-top: 10px;
   margin-left: 10px;
+}
+
+.button_logoff {
+  border-radius: 7px;
+  margin-left: 1370px;
+  position: absolute;
+  width: 55px;
+  height: 25px;
+  top: 48px;
+  background-color: #28292c;
+  color: white;
+
+
 }

@@ -52,9 +52,11 @@
                         width="55px" height="35px">
                 </a>
 
+
+
             </div>
 
-            <div class="toggle-switch">
+            <div class="toggle-switch1">
                 <label class="switch-label">
                     <input id="checkbox"
                         onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')"
@@ -90,9 +92,7 @@
                                         <input type="password" name="senha" placeholder="Sua senha aqui.">
                                         <br>
                                         <br>
-                                        <button
-                                            style="margin-bottom:10px; background-color:purple; color:white; border-radius: 5px; border:1px; padding:5px;"
-                                            type="submit">ENTRAR</button>
+                                        <button class="button_entrar_style" type="submit">ENTRAR</button>
                                         <a class="button_createaccount " href="{{url_for('criarnovaconta')}}">Criar uma
                                             conta</a>
 
@@ -105,9 +105,6 @@
                                         {% endif %}
 
                                     </div>
-                            </form>
-                            <form action = "{{url_for('logoff')}}"  method = 'POST'>
-                                <button type='submit'>Sair</button>
                             </form>    
                             <div class="input">
                                 <p style="color: white; text-align: center; font-size:x-large; margin-top:80px;">

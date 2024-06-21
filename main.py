@@ -5,7 +5,7 @@ from mysql.connector import Error
 from time import sleep
 
 def dormir():
-    return sleep(2.0)
+    return sleep(3.0)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Kaue182023'
@@ -63,7 +63,7 @@ def index () :
         nome = request.form.get('nome')
         senha = request.form.get('senha')
   
-        if nome == 'adm' and senha == 'Kaua1987231' :
+        if nome == 'adm' and senha == '123' :
             return render_template('pagina_ptbr/novoprojeto.html')
         
 
@@ -109,6 +109,7 @@ def logoff () :
         session.pop('usuario_id', None)
         flash('Sessão finalizada!')
     
+    dormir()
     return redirect(url_for('indexhome'))
 
 
@@ -318,6 +319,15 @@ def novoprojeto() :
 @app.route('/historypag')
 def historypag() :
     return render_template("pagina_ptbr/historypag.html")
+
+
+
+
+
+
+
+
+
 #--------------------------------------               ROTAS DA PAGINA EM INGLES-------------------------------------------------------------------#
 
 
@@ -367,8 +377,36 @@ def tothorasprojenglish() :
 
 @app.route('/viewprojenglish')
 def viewprojenglish() :
-     dormir()
-     return render_template('pagina_eng/viewproj_english.html')
+     
+    if 'usuario_id' not in session :
+        flash('Por favor, faça login para poder ver seus projetos.')
+        return redirect(url_for('indexhome'))
+    
+    usuario_id = session['usuario_id']
+    
+    conect_DB = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="usuários"
+    )
+
+    if conect_DB.is_connected():
+        cursor = conect_DB.cursor()
+        comando = ("SELECT id, nome FROM projetos WHERE usuario_id = %s")
+        cursor.execute(comando, (usuario_id,))
+        projetos = cursor.fetchall()
+        
+        cursor.close()
+        conect_DB.close()
+        dormir()
+    
+        return render_template('pagina_ptbr/viewproj.html', projetos = projetos)
+    
+        flash('Erro ao conectar com o banco de dados.')
+        return redirect(url_for('indexhome'))
+
+    return render_template('pagina_eng/viewproj_english.html')
 
 @app.route('/novoprojetoenglish')
 

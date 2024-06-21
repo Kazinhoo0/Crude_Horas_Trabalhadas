@@ -24,10 +24,10 @@
                     <p class="p_cabecalho">WHAT YOU WANT TO DO NOW ?</p>
 
                     <div  class="btn">
-                        <a class="button1 buttonwhite" href="{{url_for('novoprojetoenglish')}}">New Project</a>
-                        <a class="button1 buttonwhite" href="{{url_for('viewprojenglish')}}">View Project</a>
-                        <a class="button1 buttonwhite" href="{{url_for('tothorasprojenglish')}}">View Total Hours</a>
-                        <a class="button1 buttonwhite" href="{{url_for('modifyvalorhoraenglish')}}">Modify Value/Hours</a>
+                        <a class="button1 buttonwhite" href="{{url_for('novoprojetoenglish')}}">CREATE NEW PROJECT</a>
+                        <a class="button1 buttonwhite" href="{{url_for('viewprojenglish')}}">PROJECTS REGISTERED</a>
+                        <a class="button1 buttonwhite" href="{{url_for('tothorasprojenglish')}}">TOTAL HOURS WORKED </a>
+                        <a class="button1 buttonwhite" href="{{url_for('modifyvalorhoraenglish')}}">MODIFY VALUE/HOURS</a>
                    
                     </div>
                         <div>
@@ -47,6 +47,10 @@
                 <a href="{{url_for('historypag')}}">
                     <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png" width="55px" height="35px">
                 </a>
+
+                <form action = "{{url_for('logoff')}}"  method = 'POST'>
+                    <button class="button_logoff" type='submit'>Sair</button>
+                </form>
 
             </div> 
             

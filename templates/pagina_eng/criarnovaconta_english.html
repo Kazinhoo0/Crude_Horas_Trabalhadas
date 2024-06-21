@@ -38,19 +38,20 @@
 
             <div id='centericonsflag'>
 
-                <a href="{{url_for('indexhomeenglish')}}">
+                <a href="{{url_for('criarnovacontaenglish')}}">
                     <img class="img_english2" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
                         width="50px" height="50px">
                 </a>
 
-                <a href="{{url_for('indexhome')}}">
+                <a href="{{url_for('criarnovaconta')}}">
                     <img class="img_brazil2" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png"
                         width="55px" height="35px">
                 </a>
 
-            </div> 
 
-            <div class="toggle-switch">
+            </div>
+
+            <div class="toggle-switch1">
                 <label class="switch-label">
                     <input id="checkbox"
                         onclick="mudarcor('#ffffff', 'radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)','#dbd6d6','#cfcbcb','#1b1a1a','#cfcbcb','#e4e1e100')"
@@ -77,50 +78,51 @@
                                     </svg></button>
                             </div>
                             <div class="modal__body">
-                                <div class="input">
-                                    <p style="color: white;">Username: </p>
-                                    <input type="text" placeholder="Your username here.">
-                                    <br><br>
-                                    <p style="color: white;">Password: </p>
-                                    <input type="password" placeholder="Your password here.">
-                                    <br>
-                                    <br>
-                                    <button id="buttoncriarconta"
-                                        style="background-color: #8a2be2; color:#ffffff; border-radius: 5px; border: 1px;"
-                                        onclick="Criareregistrarusuarios()"
-                                        onmouseenter="mouseenter('#e161f1a9','#ffffff')"
-                                        onmouseleave="mouseleave('#8a2be2','#ffffff')" type="button">Create
-                                        account</button>
-                                    <a id="buttonjatenhoconta" onmouseenter="mouseenter2('#e161f1a9','#ffffff')"
-                                        onmouseleave="mouseleave2('#8a2be2','#ffffff')" class="button_createaccount "
-                                        href="index.html">I have an account</a>
-                                </div>
-                                <div class="input">
-                                    <p style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
-                                        Welcome to padprojects</p>
-                                </div>
+                                <form action="/criarnovacontaenglish" id="registrationForm" method="post">
+                                    <div class="input">
+                                        <p style="color: white;">Username: </p>
+                                        <input id="nome" type="text" name="nome" placeholder="Seu username aqui.">
+                                        <br><br>
+                                        <p style="color: white;">Password: </p>
+                                        <input id="senha" type="password" name="senha" placeholder="Sua password aqui.">
+                                        <br>
+                                        <br>
+                                        <button id="buttoncriarconta" class="stylebutton_" value="Registrar"
+                                            type="submit">Create account</button>
+                                        <a id="buttonjatenhoconta" class="button_createaccount"
+                                            href="{{url_for('indexhome')}}">I have a account </a>
+                                        
+                                        {% set menssagem = get_flashed_messages() %}
+                                        {% if menssagem %}
+
+                                        <p class="alert_notuser">{{menssagem[0]}} </p>
+
+
+                                        {% endif %}
+                                    </div>
+                                    <div class="input">
+                                        <p
+                                            style="color: white; text-align: center; font-size:x-large; margin-top:120px;">
+                                            WELCOME TO PADPROJECTS </p>
+                                    </div>
+                                </form>
                             </div>
                         </div>
+                        <button id="popupid" class="popupstyle1_1" onclick="abrirpop_porti()" type="button"> <img
+                                src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
+
+                        <button class="popupstyle2_2" onclick="abrirpop_linkd()" type="button"><img
+                                src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
+
+                        <button class="popupstyle3_3" onclick="abrirpop_github()" type="button"><img
+                                src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
+                        <p style="margin-left: 215px; color:rgb(219, 219, 211);">Developed by Kauã Lopes Monteiro
+                        </p>
+
                     </div>
-                    <button id="popupid" class="popupstyle1__1" onclick="abrirpop_porti()" type="button"> <img
-                        src="{{url_for('static',filename ='imagens/Portifólio_img.png')}} "></button>
-
-                    <button class="popupstyle2__2" onclick="abrirpop_linkd()" type="button"><img
-                        src="{{url_for('static',filename ='imagens/Linked_img.png')}}"></button>
-
-                    <button class="popupstyle3__3" onclick="abrirpop_github()" type="button"><img
-                        src="{{url_for('static',filename ='imagens/icons8-github-30.png')}}"></button>
-                    <p style="margin-left: 215px; color:rgb(219, 219, 211);">Developed by Kauã Lopes Monteiro</p>
                 </div>
-
             </div>
-
-
-
-
-
         </div>
-    </div>
 </body>
 
 </html>

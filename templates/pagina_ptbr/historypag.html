@@ -35,7 +35,7 @@
                 
             </div>
             
-            <div>
+            <div id="centericonsflag">
 
                 <a href="{{url_for('historypagenglish')}}">
                     <img class="img_english" src="{{url_for('static' , filename = 'imagens/USA-PNG-Clipart.png')}}"
@@ -45,6 +45,10 @@
                 <a href="historypag.html">
                     <img class="img_brazil" src="https://node01.flagstat.net/media/catalog/product/detail/12717.png" width="55px" height="35px">
                 </a>
+
+                <form action = "{{url_for('logoff')}}"  method = 'POST'>
+                    <button class="button_logoff" type='submit'>Sair</button>
+                </form>
 
             </div> 
         
