@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, redirect, request, flash , url_for
+from flask import Flask, render_template, redirect, request, flash , url_for , session
 import mysql.connector
 from mysql.connector import Error
 from time import sleep
@@ -30,49 +30,80 @@ def home() :
 
 @app.route('/viewproj')
 def viewproj() :
-    dormir()
-    return render_template('pagina_ptbr/viewproj.html')
+    if 'usuario_id' not in session :
+        flash('Por favor, faça login para poder ver seus projetos.')
+        return redirect(url_for('indexhome'))
+    
+    usuario_id = session['usuario_id']
+    
+    conect_DB = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="usuários"
+    )
+
+    if conect_DB.is_connected():
+        cursor = conect_DB.cursor()
+        comando = ("SELECT id, nome FROM projetos WHERE usuario_id = %s")
+        cursor.execute(comando, (usuario_id,))
+        projetos = cursor.fetchall()
+
+        cursor.close()
+        conect_DB.close()
+    
+    
+        return render_template('pagina_ptbr/viewproj.html', projetos = projetos)
+    
+    flash('Erro ao conectar com o banco de dados.')
+    return redirect(url_for('indexhome'))
+
 
 
 
 @app.route('/index', methods = ["POST", 'GET'])
 
 def index () :
-    nome = request.form.get('nome')
-    senha = request.form.get('senha')
+    if request.method == 'POST':
+        nome = request.form.get('nome')
+        senha = request.form.get('senha')
   
-    if nome == 'adm' and senha == 'Kaua1987231' :
-        return render_template('pagina_ptbr/novoprojeto.html')
-    
-
-    conect_DB = mysql.connector.connect(
-        host="localhost",
-        user = "root",
-        password = "",
-        database = "usuários"
-    )
-    if conect_DB.is_connected():
-        print("Banco de dados conectado com sucesso")
-        cursor = conect_DB.cursor()
-        comando = ("select * from usuarios where nome = %s and senha = %s ")
-        cursor.execute(comando, (nome,senha))
-        usuario = cursor.fetchone()
-        
-        conect_DB.close()
-        cursor.close()
-
-        if usuario :
-            flash('Login efetuado com sucesso!')
-            dormir() 
+        if nome == 'adm' and senha == 'Kaua1987231' :
             return render_template('pagina_ptbr/novoprojeto.html')
-
-        if not usuario :
-            flash("Nome de usuario ou senha incorretos!") 
-            dormir()
-            return redirect(url_for('indexhome'))
         
-    dormir()
-    return render_template('pagina_ptbr/index.html')
+
+        conect_DB = mysql.connector.connect(
+            host="localhost",
+            user = "root",
+            password = "",
+            database = "usuários"
+        )
+        if conect_DB.is_connected():
+            print("Banco de dados conectado com sucesso")
+            cursor = conect_DB.cursor()
+            comando = ("select id from usuarios where nome = %s and senha = %s ")
+            cursor.execute(comando, (nome,senha))
+            usuario = cursor.fetchone()
+            
+            conect_DB.close()
+            cursor.close()
+
+            if usuario :
+                session['usuario_id'] = usuario[0]
+                flash('Login efetuado com sucesso!')
+                dormir() 
+                return render_template('pagina_ptbr/novoprojeto.html')
+
+            if not usuario :
+                flash("Nome de usuario ou senha incorretos!") 
+                dormir()
+                return redirect(url_for('indexhome'))
+            
+        dormir()
+        return render_template('pagina_ptbr/index.html')
+    else: 
+        return render_template(url_for('indexhome'))
+
 
 
 
@@ -83,7 +114,7 @@ def criarnovaconta() :
         nome = request.form.get ('nome')
         senha = request.form.get ('senha')
         
-        if not nome and not senha:
+        if not nome or not senha:
             flash('O campo Usuário e senha são obrigatorios')
             dormir()
             return render_template('pagina_ptbr/criarnovaconta.html')
@@ -133,7 +164,7 @@ def modifyvalorhora() :
         novovalor = request.form.get('novovalor')
 
         
-        if not nomeprojeto or not nomeprojeto or not novovalor :
+        if not nomeprojeto or not novovalor :
             flash('Os campos nome do projeto e novo valor são obrigatorios!. Por favor, tente novamente.')
             return render_template('pagina_ptbr/modifyvalorhora.html')
  
@@ -215,11 +246,17 @@ def tothorasproj() :
 @app.route('/novoprojeto', methods = ['POST' , 'GET'])
 def novoprojeto() :
     
+    if 'usuario_id' not in session:
+        flash('Por favor, faça login para criar um projeto.')
+        return redirect(url_for('indexhome'))
+    
+    
     if request.method == 'POST':
         nomeprojeto = request.form.get ('nomeprojeto')
         data = request.form.get ('data')
         valorhora = request.form.get('valorhora')
         descricao = request.form.get('descricao')
+        usuario_id = session['usuario_id']
         
         
         
@@ -243,8 +280,8 @@ def novoprojeto() :
             if conect_DB.is_connected():
                 print("Banco de dados conectado com sucesso!")
                 cursor = conect_DB.cursor()
-                comando = ("INSERT INTO projetos (nome,data,valorhora,descrição) VALUES (%s,%s,%s,%s)")
-                cursor.execute(comando, (nomeprojeto,data,valorhora,descricao))
+                comando ="""INSERT INTO projetos (nome,data,valorhora,descricao,usuario_id) VALUES (%s , %s , %s , %s , %s)"""
+                cursor.execute(comando, (nomeprojeto,data,valorhora,descricao, usuario_id))
                 conect_DB.commit()
                 flash('Projeto registrado com sucesso!')
                 dormir()
