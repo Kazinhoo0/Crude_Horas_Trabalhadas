@@ -99,22 +99,25 @@
                                         <label class="input__label2">Descrição</label>
                                         <textarea placeholder="Uma breve apresentação do seu projeto." name='descricao'
                                             id="descricao" class="input__field input__field--textarea"></textarea>
-                                        <p class="input__description">Faça uma boa descrição do seu projeto, para que
-                                            todos
-                                            possam saber para que ele serve.</p>
+                                        <p class="input__description">Faça uma boa descrição do seu projeto, para que todos possam saber para que ele serve.</p>
+                                        
+                                        <div>
+                                            <div>
+                                                {% set menssagem = get_flashed_messages() %}
+                                                {% if menssagem %}
+
+                                                    <p'class='alert_projcriado'>{{menssagem[0]}} </p>
+
+
+                                                {% endif %}
+                                            </div>  
+                                            <div>
+                                                <button type='submit' onclick="novo_proj()" class="button button--primary1">Criar projeto</button>
+                                            </div> 
+                                        </div>
                                     </div>
-                                    <div class="modal__footer">
-                                        <button onclick="novo_proj()" class="button button--primary">Criar
-                                            projeto</button>
-                                    </div>
-                                    {% set menssagem = get_flashed_messages() %}
-                                    {% if menssagem %}
-
-                                    <p class="alert_notuser">{{menssagem[3]}} </p>
-
-
-                                    {% endif %}
-
+                                    
+                                    
                                 </div>
                             </form>
                         </div>

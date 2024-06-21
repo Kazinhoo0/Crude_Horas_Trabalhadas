@@ -32,10 +32,10 @@ def viewproj() :
     usuario_id = session['usuario_id']
     
     conect_DB = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="usuários"
+        host="192.168.0.117",
+        user = "teste_conexao",
+        password = "123456",
+        database = "usuários"
     )
 
     if conect_DB.is_connected():
@@ -68,9 +68,9 @@ def index () :
         
 
         conect_DB = mysql.connector.connect(
-            host="localhost",
-            user = "root",
-            password = "",
+            host="192.168.0.117",
+            user = "teste_conexao",
+            password = "123456",
             database = "usuários"
         )
         if conect_DB.is_connected():
@@ -136,9 +136,9 @@ def criarnovaconta() :
         
         try:
             conect_DB = mysql.connector.connect(
-                host="localhost",
-                user = "root",
-                password = "",
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
                 database = "usuários"
             )
             if conect_DB.is_connected():
@@ -187,9 +187,9 @@ def modifyvalorhora() :
  
         try:
             conect_DB = mysql.connector.connect(
-                host="localhost",
-                user = "root",
-                password = "",
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
                 database = "usuários"
             )
             if conect_DB.is_connected():
@@ -229,9 +229,9 @@ def tothorasproj() :
  
         try:
             conect_DB = mysql.connector.connect(
-                host="localhost",
-                user = "root",
-                password = "",
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
                 database = "usuários"
             )
             if conect_DB.is_connected():
@@ -289,9 +289,9 @@ def novoprojeto() :
         
         try:
             conect_DB = mysql.connector.connect(
-                host="localhost",
-                user = "root",
-                password = "",
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
                 database = "usuários"
             )
             if conect_DB.is_connected():
@@ -343,9 +343,9 @@ def indexenglish() :
 
 
     conect_DB = mysql.connector.connect(
-                host="localhost",
-                user = "root",
-                password = "",
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
                 database = "usuários"
             )
     if conect_DB.is_connected():
@@ -385,10 +385,10 @@ def viewprojenglish() :
     usuario_id = session['usuario_id']
     
     conect_DB = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="usuários"
+        host="192.168.0.117",
+        user = "teste_conexao",
+        password = "123456",
+        database = "usuários"
     )
 
     if conect_DB.is_connected():
@@ -403,8 +403,8 @@ def viewprojenglish() :
     
         return render_template('pagina_ptbr/viewproj.html', projetos = projetos)
     
-        flash('Erro ao conectar com o banco de dados.')
-        return redirect(url_for('indexhome'))
+    flash('Erro ao conectar com o banco de dados.')
+    return redirect(url_for('indexhome'))
 
     return render_template('pagina_eng/viewproj_english.html')
 

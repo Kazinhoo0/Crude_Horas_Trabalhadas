@@ -91,11 +91,13 @@
                                 <div class="input">
                                     <label class="input__label">Nome projeto</label>
                                     {% for projeto in projetos %}
-                                        <li> ID: {{projeto[0]}} - Nome : <input type = 'text' name= 'projeto_nome_{{ projeto[0]}}' value ='{{ projeto[1]}}' ></li>
+                                        <li style='color:white;' > ID: {{projeto[0]}} - Nome : <input type = 'text' name= 'projeto_nome_{{ projeto[0]}}' value ='{{ projeto[1]}}' ></li>
+
                                     {% endfor%}
-                                    <input id="botãovoltarparaomenu" class="input__field" type="text"> <a
-                                        class="style_backmenu" href="index.html">Voltar para o menu</a>
                                     <p class="input__description">Você tem {{projetos|length}} projetos cadastrados</p>
+
+
+                                    <a class="style_backmenu" href="index.html">Voltar para o menu</a>
 
                                 </div>
                             </form> 

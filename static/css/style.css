@@ -355,6 +355,19 @@ img {
   font-weight: 500;
   font-size: 0.875rem;
   margin-bottom: 200px;
+  border: 1px solid red;
+}
+
+.button--primary1 {
+  background-color: #6c00ab;
+  color: #FFF;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 450px;
+  margin-left:320px;
+  position: absolute;
 }
 
 .style_backmenu {
@@ -366,6 +379,8 @@ img {
   width: 150px;
   text-align: center;
   padding: 5px;
+  margin-top: 500px;
+  position:absolute
 
 
 
@@ -788,9 +803,17 @@ img {
 
 
 .alert_notuser {
-  color: red;
+  color: rgb(248, 0, 0);
   margin-top: 10px;
   margin-left: 10px;
+}
+
+.alert_projcriado {
+  color: rgb(0, 255, 13);
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid red;
+  width: 250px;
 }
 
 .button_logoff {
