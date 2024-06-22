@@ -8,7 +8,7 @@ def dormir():
     return sleep(3.0)
 
 app = Flask(__name__)
-
+app.secret_key = 'Kaelsd20031811'
 
 
 #se o usuário não acessar nenhuma página específica, ira ser direcionado para o index.html
