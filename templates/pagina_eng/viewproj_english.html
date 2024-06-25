@@ -78,22 +78,21 @@
                                             </path>
                                     </svg></button>
                             </div>
-                            <div class="modal__body">
-                                <div class="input">
-                                    <label class="input__label">Name Project</label>
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text">
-                                    <input class="input__field" type="text"> <a class="style_backmenu" href="index_english.html">Return to menu</a>
-                                </div>
-                                
-                                
-                            </div>
+                            <form method = "POST" action = '/viewprojenglish' >
+                                <div class="modal__body">
+                                    <div class="input">
+                                        <label class="input__label">Name Project</label>
+                                        {% for projeto in projetos %}
+                                            <li style='color:white;' > ID: {{projeto[0]}} - Name : <input type = 'text' name= 'projeto_nome_{{ projeto[0]}}' value ='{{ projeto[1]}}' ></li>
+    
+                                        {% endfor%}
+                                        <p class="input__description">You have {{projetos|length}} registed projects</p>
+    
+    
+                                        <a class="style_backmenu" href="index.html">Voltar para o menu</a>
+    
+                                    </div>
+                                </form> 
                         </div>
                     </div>
                 </div>

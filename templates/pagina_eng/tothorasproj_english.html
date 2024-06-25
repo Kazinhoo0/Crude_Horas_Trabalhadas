@@ -75,20 +75,20 @@
                             <div class="modal__header">
                                 <!-- 0<span class="modal__title">Projetos Cadastrados</span><button class="button button--icon"><svg width="24" viewBox="0 0 24 24" height="24" xmlns="http://www.w3.org/2000/svg"> -->
                             </div>
-                            <form action="">
+                            <form action="/tothorasprojenglish" method="post">
                                 <div class="modal__body">
                                     <div class="input">
                                         <label class="input__label">Name Project</label>
-                                        <input class="input__field" type="text" placeholder="EX: Crude_trabalhadores">
+                                        <input class="input__field" type="text" placeholder="EX: Crude_trabalhadores" name="nomeprojeto">
                                         <p class="input__description">The title cannot be longer than 32 characters</p>
                                     </div>
                                     <div class="input">
-                                        <label class="input__label">Description</label>
-                                        <textarea placeholder="Ex new value: 350" class="input__field input__field--textarea"></textarea>
+                                        <label class="input__label">New Value</label>
+                                        <textarea placeholder="Ex new value: 350" class="input__field input__field--textarea" name="novovalor"></textarea>
                                         <p class="input__description">Make a good description
                                             of your project, so everyone can know what it is for.</p>
                                     </div>
-                                    <button onclick="novo_proj()" class="button button--primary">Done</button>
+                                    <button onclick="novo_proj()" class="button button--primary" type="submit">Done</button>
                                 </div>
                             </form>
                         </div>

@@ -85,25 +85,28 @@
                                         </path>
                                     </svg></button>
                             </div>
-                            <div class="modal__body">
-                                <div class="input">
-                                    <label class="input__label">Name of the project to be modified</label>
-                                    <input class="input__field" type="text" placeholder="Ex: Project Crudworks">
-                                    <p class="input__description">If you are in doubt, check which projects you have
-                                        registered at padprojects <a href="{{url_for('viewprojenglish')}}">click
-                                            here</a>.</p>
+                            <form action="/modifyvalorhoraenglish" method="post">
+                                <div class="modal__body">
+                                    <div class="input">
+                                        <label class="input__label">Name of the project to be modified</label>
+                                        <input class="input__field" type="text" placeholder="Ex: Project Crudworks" name="nomeprojeto">
+                                        <p class="input__description">If you are in doubt, check which projects you have
+                                            registered at padprojects <a href="{{url_for('viewprojenglish')}}">click
+                                                here</a>.</p>
+                                    </div>
+                                    <div class="input">
+                                        <label class="input__label">New value</label>
+                                        <textarea placeholder="New value here."
+                                            class="input__field input__field--textarea" name="novovalor"></textarea>
+                                        <p class="input__description">Don't worry, you'll be able to change it as many times
+                                            as you want.</p>
+                                    </div>
                                 </div>
-                                <div class="input">
-                                    <label class="input__label">New value</label>
-                                    <textarea placeholder="New value here."
-                                        class="input__field input__field--textarea"></textarea>
-                                    <p class="input__description">Don't worry, you'll be able to change it as many times
-                                        as you want.</p>
-                                </div>
-                            </div>
+                               
                             <div class="modal__footer">
-                                <button class="button button--primary">Done</button>
+                                <button class="button button--primary" type="submit">Done</button>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>

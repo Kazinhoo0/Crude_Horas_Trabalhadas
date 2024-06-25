@@ -361,19 +361,139 @@ def indexenglish() :
 
 @app.route('/historypagenglish')
 def historypagenglish() :
-    dormir()
+    if request.method == 'POST':
+        nomeprojeto = request.form.get ('nomeprojeto')
+        novahora = request.form.get('horastrab')
+
+        
+        if not nomeprojeto or not nomeprojeto or not novahora :
+            flash('Tem algo de errado ai.-. Os campos nome e horas precisam estar preechidos. Por favor, tente novamente..')
+            return render_template('pagina_ptbr/tothorasproj.html')
+ 
+        try:
+            conect_DB = mysql.connector.connect(
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
+                database = "usuários"
+            )
+            if conect_DB.is_connected():
+                print("Banco de dados conectado com sucesso!")
+                cursor = conect_DB.cursor()
+                comando = ("UPDATE projetos SET valorhora = valorhora + (%s) WHERE nome = (%s)")
+                cursor.execute(comando, (novahora,nomeprojeto))
+                conect_DB.commit()
+                flash('Projeto registrado com sucesso!')
+                dormir()
+                return redirect(url_for('tothorasproj'))
+                
+        except Error as e :
+            print(f'Erro ao conectar ou operar no banco de dados: {e}')
+            flash('Erro ao criar conta. Por favor, tente novamente. ')        
+        
+        finally:   
+            if conect_DB and conect_DB.is_connected():
+                cursor.close()
+                conect_DB.close()
+    
+    dormir()  
     return render_template("pagina_eng/historypag_english.html")
 
 @app.route('/modifyvalorhoraenglish')
 def modifyvalorhoraenglish() :
-      dormir()
-      return render_template('pagina_eng/modifyvalorhora_english.html')
+       
+       
+    if 'usuario_id' not in session:
+        flash('Por favor, faça login ou crie uma conta, para acessar essa página')
+        print('Usuário não cadastrado')
+        return redirect(url_for('indexhome'))     
+    
+    
+    
+    
+    if request.method == 'POST':
+        nomeprojeto = request.form.get ('nomeprojeto')
+        novovalor = request.form.get('novovalor')
+
+        
+        if not nomeprojeto or not novovalor :
+            flash('Os campos nome do projeto e novo valor são obrigatorios!. Por favor, tente novamente.')
+            return render_template('pagina_ptbr/modifyvalorhora.html')
+ 
+        try:
+            conect_DB = mysql.connector.connect(
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
+                database = "usuários"
+            )
+            if conect_DB.is_connected():
+                print("Banco de dados conectado com sucesso!")
+                cursor = conect_DB.cursor()
+                comando = ("UPDATE usuários.projetos SET valorhora = (%s) WHERE  nome = (%s)")
+                cursor.execute(comando, (novovalor,nomeprojeto))
+                conect_DB.commit()
+                flash('Projeto registrado com sucesso!')
+                dormir()
+                return redirect(url_for('modifyvalorhora'))
+                
+        except Error as e :
+            print(f'Erro ao conectar ou operar no banco de dados: {e}')
+            flash('Erro ao criar conta. Por favor, tente novamente. ')        
+        
+        finally:   
+            if conect_DB and conect_DB.is_connected():
+                cursor.close()
+                conect_DB.close()
+    
+    dormir() 
+    return render_template('pagina_eng/modifyvalorhora_english.html')
 
 @app.route('/tothorasprojenglish')
 
 def tothorasprojenglish() :
-      dormir()
-      return render_template('pagina_eng/tothorasproj_english.html')
+      
+    if 'usuario_id' not in session:
+        flash('Please create a account or login a account existing')
+        print('UserNotfound')
+        return redirect(url_for('indexhomeenglish'))
+    
+    if 'usuario_id' in session:
+
+        nomeprojeto = request.form.get = ('nomeprojeto')
+        novovalor = request.form.get = ('novovalor')
+    
+    try:
+        conect_DB = mysql.connector.connect(
+            host="192.168.0.117",
+            user = "teste_conexao",
+            password = "123456",
+            database = "usuários"
+        )
+        if conect_DB.is_connected():
+            print("Banco de dados conectado com sucesso!")
+            cursor = conect_DB.cursor()
+            comando = ("UPDATE projetos SET valorhora = valorhora + (%s) WHERE nome = (%s)")
+            cursor.execute(comando, (novovalor,nomeprojeto))
+            conect_DB.commit()
+            flash('Projeto registrado com sucesso!')
+            dormir()
+            return redirect(url_for('modifyvalorhora'))
+    except Error as e:
+        print(f'Erro {e} ao se conectar com banco de dados!')
+        flash(f'Erro {e} , por favor tente novamente mais tarde')
+    
+    
+    finally:
+        if conect_DB and conect_DB.is_connected :
+            cursor.close()
+            conect_DB.close()
+
+
+
+
+    dormir()  
+    return render_template('pagina_eng/tothorasproj_english.html')
 
 @app.route('/viewprojenglish')
 def viewprojenglish() :
@@ -409,6 +529,57 @@ def viewprojenglish() :
 @app.route('/novoprojetoenglish')
 
 def novoprojetoenglish() :
+    
+    if 'usuario_id' not in session:
+        flash('Por favor, faça login para criar um projeto.')
+        return redirect(url_for('indexhome'))
+    
+    
+    if request.method == 'POST':
+        nomeprojeto = request.form.get ('nameproject')
+        data = request.form.get ('data')
+        valorhora = request.form.get('valorhora')
+        descricao = request.form.get('descricao')
+        usuario_id = session['usuario_id']
+        
+        
+        
+        if not nomeprojeto or not data or not valorhora :
+            flash('Os campos nome, data e valor/hora são obrigatórios. Por favor, tente novamente.')
+            return render_template('pagina_ptbr/novoprojeto.html')
+        
+        if len(descricao) > 200 :
+            flash('Numero máximo de 200 caracteres ultrapassado. Por favor, insira novamente .')
+            return redirect(url_for('novoprojeto') )
+            
+            
+        
+        try:
+            conect_DB = mysql.connector.connect(
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
+                database = "usuários"
+            )
+            if conect_DB.is_connected():
+                print("Banco de dados conectado com sucesso!")
+                cursor = conect_DB.cursor()
+                comando ="""INSERT INTO projetos (nome,data,valorhora,descricao,usuario_id) VALUES (%s , %s , %s , %s , %s)"""
+                cursor.execute(comando, (nomeprojeto,data,valorhora,descricao, usuario_id))
+                conect_DB.commit()
+                flash('Projeto registrado com sucesso!')
+                dormir()
+                return redirect(url_for('novoprojeto'))
+                
+        except Error as e :
+            print(f'Erro ao conectar ou operar no banco de dados: {e}')
+            flash('Erro ao criar conta. Por favor, tente novamente. ')        
+        
+        finally:   
+            if conect_DB and conect_DB.is_connected():
+                cursor.close()
+                conect_DB.close()
+    
     dormir()
     return render_template('pagina_eng/novoprojeto_english.html')
 
@@ -416,6 +587,49 @@ def novoprojetoenglish() :
 @app.route('/criarnovacontaenglish')
 
 def criarnovacontaenglish () :
+    
+    if request.method == 'POST':
+        nome = request.form.get ('nome')
+        senha = request.form.get ('senha')
+        
+        if not nome or not senha:
+            flash('O campo Usuário e senha são obrigatorios')
+            dormir()
+            return render_template('pagina_ptbr/criarnovaconta.html')
+        
+        if len(senha) < 8 :
+            flash('Sua senha precisa ter mais que 8 caracteres,porfavor tente novamente.')
+            dormir()
+            return redirect(url_for('criarnovaconta') )
+            
+            
+        
+        try:
+            conect_DB = mysql.connector.connect(
+                host="192.168.0.117",
+                user = "teste_conexao",
+                password = "123456",
+                database = "usuários"
+            )
+            if conect_DB.is_connected():
+                print("Banco de dados conectado com sucesso")
+                cursor = conect_DB.cursor()
+                comando = ("INSERT INTO usuarios (nome,senha) VALUES (%s,%s)")
+                cursor.execute(comando, (nome , senha))
+                conect_DB.commit()
+                dormir()
+                flash('Conta criada com sucesso!')
+                return redirect(url_for('home'))
+                
+        except Error as e :
+            print(f'Erro ao conectar ou operar no banco de dados: {e}')
+            flash('Erro ao criar conta. Por favor, tente novamente. ')        
+        
+        finally:   
+            if conect_DB and conect_DB.is_connected():
+                cursor.close()
+                conect_DB.close()
+    
     dormir()
     return render_template('pagina_eng/criarnovaconta_english.html')
 
