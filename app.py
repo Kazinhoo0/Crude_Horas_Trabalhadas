@@ -406,8 +406,6 @@ def viewprojenglish() :
     flash('Erro ao conectar com o banco de dados.')
     return redirect(url_for('indexhome'))
 
-    return render_template('pagina_eng/viewproj_english.html')
-
 @app.route('/novoprojetoenglish')
 
 def novoprojetoenglish() :
