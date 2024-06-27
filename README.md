@@ -10,5 +10,7 @@ E no final ele mostra uma série de informações que você adicionou ao longo d
 
 
 Link do site = https://crude-horas-trabalhadas.onrender.com
+<br>
 Portifólio = https://kaualopesmonteiro.netlify.app/
+<br>
 Linkedin = https://www.linkedin.com/in/kau%C3%A3-lopes-monteiro/
